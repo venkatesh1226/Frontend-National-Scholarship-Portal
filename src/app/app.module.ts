@@ -1,10 +1,11 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { InstitutionregistrationComponent } from './institutionregistration/institutionregistration.component';
+import { InstitutionregistrationComponent } from './components/institutionregistration/institutionregistration.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { InstitutionregistrationComponent } from './institutionregistration/inst
   imports: [
     BrowserModule,
     AppRoutingModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
