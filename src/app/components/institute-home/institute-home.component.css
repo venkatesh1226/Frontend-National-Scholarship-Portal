@@ -1,0 +1,38 @@
+mat-grid-tile {
+    background: rgb(91, 193, 227);
+    width: 100%;
+    min-height: 100%;
+  }
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    margin-left: 100px;
+    align-content: center;
+     
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+ 
+  .example-spacer {
+    top:0;
+
+  }
+  .wrapper{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.float-child{
+    float: left;
+    
+    width: 32%;
+    padding: 20px;
+}
+
+.float-box{
+    padding: 20px;
+}
