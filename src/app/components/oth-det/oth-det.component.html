@@ -1,0 +1,72 @@
+<div class="wrapper">
+    <div class="shadow p-3 mb-5 bg-body rounded">
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" >BasicDetails</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" >AcademicDetails</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" >TenthDetails</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" >TwelthDetails</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" >FeeDetails</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" >OtherDetails</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active"  aria-current="page" >ContactDetails</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" >SubmitDetails</a>
+    </li>
+  </ul>
+    </div>
+  </div>
+  <div class="other">
+      <h1>OTHER PERSONAL DETAILS</h1>
+      <form class="row g-3" #otherDetailsForm="ngForm" (ngSubmit)="saveOtherDetails(otherDetailsForm)">
+        <div class="col-4">
+          <label for="inputEmail" class="form-label">Registered Email</label>
+          <input type="text" name="loginid" class="form-control" id="email" placeholder="" ngModel >
+      </div>
+          <div class="col-md-6" >
+              <label for="inputIsDisabled" class="form-label">IS DISABLED</label>
+              <select id="inputIsDisabled" name="isdisabled" class="form-select" id="isdisabled" ngModel>
+                <option selected>Select </option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+          </div>
+          <div class="col-6">
+              <label for="inputTypeofDisablity" class="form-label">TYPE OF DISABILITY</label>
+              <input type="text" name="typeofdisability" class="form-control" id="typeofdisability" placeholder="" ngModel>
+          </div>
+          <div class="col-6">
+              <label for="inputpercentageofdisability" class="form-label">PERCENTAGE OF DISABILITY</label>
+              <input type="number" name="disabilitypercentage" class="form-control" id="percentageofdisablity" ngModel>
+            </div>
+            <div class="col-md-6">
+              <label for="inputMaritalStatus" class="form-label">MARITAL STATUS</label>
+              <select id="inputMaritalStatus" name="maritalstatus" class="form-select" id="maritalstatus" ngModel>
+                <option selected>Select </option>
+                <option>MARRIED</option>
+                <option>SINGLE</option>
+              </select>
+          </div>
+          <div class="col-6">
+              <label for="inputParentsProfession" class="form-label">PARENTS PROFESSION</label>
+              <input type="text" name="parentsprofession" class="form-control" id="parentsprofession" placeholder="" ngModel>
+          </div>
+          <div class="col-12">
+              <button type="submit" class="btn btn-primary"><a href="http://localhost:4200/applyscheme/contactdetail">Submit</a></button>
+            </div>
+      </form>
+      </div>
+      
+  

@@ -1,0 +1,77 @@
+<div class="wrapper">
+    <div class="shadow p-3 mb-5 bg-body rounded">
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" >BasicDetails</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" >AcademicDetails</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" >TenthDetails</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" >TwelthDetails</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" >FeeDetails</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" >OtherDetails</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active"  aria-current="page" >ContactDetails</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" >SubmitDetails</a>
+    </li>
+  </ul>
+    </div>
+  </div>
+  <div class="contact">
+      <h1>CONTACT DETAILS</h1>
+      <form class="row g-3" #contactDetailsForm="ngForm" (ngSubmit)="saveContactDetails(contactDetailsForm)">
+        <div class="col-4">
+          <label for="inputEmail" class="form-label">Registered Email</label>
+          <input type="text" name="loginid" class="form-control" id="email" placeholder="" ngModel >
+      </div>
+          <div class="col-6">
+              <label for="inputState" class="form-label">STATE</label>
+              <select id="inputState" name="state" class="form-select" [(ngModel)]="selectedValue" id="state" ngModel>
+                <option selected>select your state</option>
+                <option value="1" name="state">Telangana</option>
+                <option value="2" name="state">Maharashtra</option>
+                <option name="state">Kerala</option>
+                <option name="state">MadhyaPradesh</option>
+                <option name="state">Punjab</option>
+              </select>
+            </div>
+            <div *ngIf="selectedValue== 2" class="alert alert-danger" role="alert"> 
+              Students from Maharashtra belonging to the backward categories can Select Merit-cum-Means Scheme offered by Maharashtra DTE Scholarship.
+            </div>
+            <div class="col-6">
+              <label for="inputDistrict" class="form-label">DISTRICT</label>
+              <input type="text" name="district" class="form-control" id="district" placeholder="Please enter your district" ngModel>
+            </div>
+            <div class="col-6">
+              <label for="inputTaluk" class="form-label">TALUK</label>
+              <input type="text" name="taluk" class="form-control" id="taluk" placeholder="Please enter your Taluk / Landmark" ngModel>
+            </div>
+            <div class="col-6">
+              <label for="inputHno" class="form-label">HOUSE NUMBER</label>
+              <input type="text" name="houseno" class="form-control" id="hno" placeholder="" ngModel>
+            </div>
+            <div class="col-6">
+              <label for="inputStreetno" class="form-label">STREET NUMBER</label>
+              <input type="text" name="streetno" class="form-control" id="streetno" placeholder="" ngModel>
+            </div>
+            <div class="col-6">
+              <label for="inputPincode" class="form-label">PINCODE</label>
+              <input type="number" name="pincode" class="form-control" id="pincode" placeholder="" ngModel>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary"> <a href="http://localhost:4200/applyscheme/submitdetail">Submit</a></button>
+            </div>
+      </form>
+      </div>
+  
