@@ -6,11 +6,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InstitutionregistrationComponent } from './components/institutionregistration/institutionregistration.component';
+import { StudenthomeComponent } from './components/studenthome/studenthome.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    InstitutionregistrationComponent
+    InstitutionregistrationComponent,
+    StudenthomeComponent
+    
   ],
   imports: [
     BrowserModule,
