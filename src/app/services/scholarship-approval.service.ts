@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Scholarship } from '../Models/Scholarship';
+import { Scholarship } from '../Models/Scholarship/Scholarship';
 @Injectable({
   providedIn: 'root'
 })
 export class ScholarshipApprovalService {
 //REST API URL
-  private URL=""
+  private URL="http://localhost:8008"
 
   scholarships: Scholarship[] = []
   constructor(private http:HttpClient) { }
@@ -17,9 +17,9 @@ export class ScholarshipApprovalService {
     //Example of calling rest api
     //return this.http.get<Scholarship[]>(URL)
 
-    //Just for testing purpose upon creating rest api remove below line and use above code.
-    this.fillDummyData();
-    return of(this.scholarships);
+
+    return this.http.get<Scholarship[]>(this.URL+"/scholarships");
+    
   }
 
   editApproval(s: Scholarship): Observable<any> { 
@@ -32,20 +32,4 @@ export class ScholarshipApprovalService {
     return of(this.scholarships);
   }
 
-  private fillDummyData() { 
-    var s1: Scholarship = {
-      id: 1,
-      details: "Student name is .....",
-      instituteApproval: true,
-      nodalApproval: false,
-      ministryApproval: false
-    }
-    this.scholarships.push(s1);
-    this.scholarships.push(structuredClone(s1))
-    this.scholarships.push(structuredClone(s1))
-    this.scholarships.push(structuredClone(s1))
-    this.scholarships.push(structuredClone(s1))
-    this.scholarships.push(structuredClone(s1))
-
-  }
 }

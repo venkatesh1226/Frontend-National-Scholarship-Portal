@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Scholarship } from 'src/app/Models/Scholarship';
+import { Scholarship } from 'src/app/Models/Scholarship/Scholarship';
 import { ScholarshipApprovalService } from 'src/app/services/scholarship-approval.service';
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 import { ViewScholarshipComponent } from '../view-scholarship/view-scholarship.component';
@@ -25,12 +25,12 @@ export class ScholarshipApprovalComponent implements OnInit {
   approve(item: Scholarship) {
     //BY DEFAULT ADDED NODAL OFFICER APPROVAL 
     //BUT AFTER REST API CREATION CODE NEED TO BE CHANGED.
-    item.nodalApproval = true;
+    item.scholarshipStatus.approvedByNodal="Accepted by Nodal Officer"
     this.service.editApproval(item).subscribe((items: Scholarship[]) => (this.scholarships = items));
    }
 
   reject(item: Scholarship) {
-    item.nodalApproval = false;
+    item.scholarshipStatus.approvedByNodal = "Not Accepted By Nodal Officer";
     this.service.editApproval(item).subscribe((items: Scholarship[]) => (this.scholarships = items));
    }
   
@@ -45,15 +45,17 @@ export class ScholarshipApprovalComponent implements OnInit {
   }
 
   convertToShortString(item: Scholarship) { 
-    return `${item.id} \n \n \n${item.details}`
+    return `${item.id} \n \n \n${item.schemeName}`
   }
 
+  // TODO: create tostring methods for all details.
   convertToLargeString(item: Scholarship) {
-    return ` ID OF APPLICATION : ${item.id} \n \n \n
-      STUDENT DETAILS : ${item.details} \n \n 
-     APPROVED By INSTITUTE ${item.instituteApproval} \n\n
-     APPROVED BY NODAL OFFICER ${item.nodalApproval}\n\n 
-     APPROVED BY MINISTRY ${item.ministryApproval}`
+    // return ` ID OF APPLICATION : ${item.id} \n \n \n
+    //   STUDENT DETAILS : ${item.details} \n \n
+    //  APPROVED By INSTITUTE ${item.instituteApproval} \n\n
+    //  APPROVED BY NODAL OFFICER ${item.nodalApproval}\n\n
+    //  APPROVED BY MINISTRY ${item.ministryApproval}`
+    return "";
   }
 
 }
