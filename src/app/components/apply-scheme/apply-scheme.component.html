@@ -1,8 +1,18 @@
+<body>
+
+  <div class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+    <strong>Guide:-</strong> Please Click on Basic Detail to start filling form.
+  </div>
+  
+
+</body>
+
 <div class="wrapper">
     <div class="shadow p-3 mb-5 bg-body rounded">
   <ul class="nav nav-pills">
     <li class="nav-item">
-      <button><a routerLink="basicdetail" routerLinkActive="active" ariaCurrentWhenActive="page" class="nav-link active" aria-current="page" >BasicDetails</a></button>
+      <button><a routerLink="basicdetail" routerLinkActive="active" ariaCurrentWhenActive="page" class="nav-link active" aria-current="page" >BasicDetails </a></button>
     </li>
     <li class="nav-item">
       <button><a routerLink="acadamicdetail" routerLinkActive="active" ariaCurrentWhenActive="page" class="nav-link active" aria-current="page" >AcadamicDetails</a></button>
@@ -27,6 +37,20 @@
     </li>
   </ul>
     </div>
+
+<div>
+REQUIRED DOCUMENT
+<br><br>
+* ADHAR CARD<br>
+* 10th MARKSHEET<br>
+* 12th MARKSHEET
+<br>
+<br>
+<br><br><br><br><br><br>
+<br><br><br><br>
+</div>
   </div>
+
+  
 
   <router-outlet></router-outlet>

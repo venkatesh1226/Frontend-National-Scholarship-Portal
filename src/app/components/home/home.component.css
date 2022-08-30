@@ -1,5 +1,6 @@
 h1{
-    color: rgb(25, 24, 25);
+
+    color: black;
     margin-left: 32%;
 }
 .btn{
@@ -9,6 +10,10 @@ h1{
     margin-bottom: 10%;
 }
 
+
 .container{
     background-color: rgb(170, 170, 246);
 }
+body {
+    background-color: lightblue;
+  }
