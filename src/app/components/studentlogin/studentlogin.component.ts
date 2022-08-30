@@ -9,15 +9,19 @@ import { StudentloginService } from '../services/studentlogin.service';
 })
 export class StudentloginComponent implements OnInit {
    user:Studentlogin= new Studentlogin();
-  constructor(private studentloginservice:StudentloginService) { }
+  constructor(private  studentloginservice:StudentloginService) { }
 
   ngOnInit(): void {
   }
 
   userLogin(){
+    var result;
     console.log(this.user)
-    this.studentloginservice.loginUser(this.user).subscribe ( data=>{
+    
+    result=this.studentloginservice.loginUser(this.user).subscribe ( data=>{
         alert("Logged in Successfully")
       }, error=>("Incorrect Username or Password"));
+
+      console.log(result+"okay");
   }
 }
