@@ -16,7 +16,7 @@ export class StudentloginComponent implements OnInit {
 
   userLogin(){
     console.log(this.user)
-    this.studentloginservice.loginUser(this.user).subscribe( data=>{
+    this.studentloginservice.loginUser(this.user).subscribe ( data=>{
         alert("Logged in Successfully")
       }, error=>("Incorrect Username or Password"));
   }
