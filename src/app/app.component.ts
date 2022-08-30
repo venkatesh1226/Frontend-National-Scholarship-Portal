@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap, Params } from '@angular/router';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -24,4 +25,5 @@ export class AppComponent {
   isOk(path: string) { 
     return this.route.url === path.trim();
   }
+
 }

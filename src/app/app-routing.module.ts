@@ -45,10 +45,11 @@ const routes: Routes = [
   {path:'student-register',component:HomeComponent}
   
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule {
 }
+

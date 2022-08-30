@@ -40,6 +40,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 //import { HttpModule } from '@angular/http';
 //import {HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
+import { InstitutionregistrationComponent } from './components/institutionregistration/institutionregistration.component';
+import { StudenthomeComponent } from './components/studenthome/studenthome.component';
+
+
 
 @NgModule({
   declarations: [
@@ -64,7 +68,9 @@ import { HomeComponent } from './components/home/home.component';
     OthDetComponent,
     ConDetComponent,
     SubDetComponent,
-    HomeComponent
+    HomeComponent,
+    InstitutionregistrationComponent,
+    StudenthomeComponent
   ],
   imports: [
     BrowserModule,
@@ -87,7 +93,6 @@ import { HomeComponent } from './components/home/home.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents:[ViewScholarshipComponent,ScholarshipApprovalComponent]
-
+  entryComponents:[ViewScholarshipComponent,ScholarshipApprovalComponent] 
 })
 export class AppModule { }
