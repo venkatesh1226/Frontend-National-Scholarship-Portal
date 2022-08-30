@@ -1,5 +1,5 @@
 h1{
-    color: blue;
+    color: black;
     margin-left: 32%;
 }
 .btn{
@@ -8,3 +8,7 @@ h1{
     margin-right: 5%;
     margin-bottom: 10%;
 }
+
+body {
+    background-color: lightblue;
+  }
