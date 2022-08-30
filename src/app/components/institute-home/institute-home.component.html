@@ -1,0 +1,67 @@
+<p>
+    <mat-toolbar  fxLayoutAlign="center center" fxFlexFill class="tool-b" color="primary">
+      <span>
+        <h1>
+        National Scholarship Portal 
+      </h1>
+    </span>
+    </mat-toolbar>
+  </p>
+  
+<p>
+    <mat-toolbar fxLayoutAlign="center center" fxFlexFill class="tool-b" color="primary">
+      <span>
+        <h1>
+        Institute Home Page 
+      </h1>
+    </span>
+    </mat-toolbar>
+  </p>
+  <button  mat-raised-button color="primary">Logout</button>
+  <div class="float-box">
+  
+  <mat-grid-list cols="5" rowHeight="1:1">
+    <mat-grid-tile colspan="1" fxLayoutAlign="center center">
+        <mat-card fxLayoutAlign="center">
+        <form class="example-form" class="'form-stu" >
+            <mat-form-field appearance="fill" >
+              <mat-label color="#00008B">Enter Student Name</mat-label>
+              <input matInput placeholder="Student Name">
+            </mat-form-field>
+          
+            <button mat-raised-button color="primary" >View Student Application</button>
+          </form>
+        </mat-card>
+        
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2" rowHeight="1:1">
+        <h1 > Student Application</h1>
+        <div class="float-child">
+            <mat-label>Bonafide Attached : </mat-label>
+            <br>
+            <mat-radio-group color="primary">
+                <mat-radio-button value="1">Yes </mat-radio-button>
+                <mat-radio-button value="0">No </mat-radio-button>
+              </mat-radio-group>
+        
+        </div>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="2" rowHeight="1:1">
+            <h1 >Student Approval</h1>
+            <div class="float-child">
+                <mat-label> </mat-label>
+                <br>
+                <mat-radio-group color="primary">
+                    <mat-radio-button value="1">Verified </mat-radio-button>
+                    <mat-radio-button value="0">Rejected </mat-radio-button>
+                  </mat-radio-group>
+                 
+            </div>
+            </mat-grid-tile>
+</mat-grid-list>
+
+<div class="float-child">
+    
+    </div>
+
+</div>
