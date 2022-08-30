@@ -7,13 +7,14 @@ import { Studentlogin } from 'src/app/studentlogin';
   providedIn: 'root'
 })
 export class StudentloginService {
-private baseUrl="http://localhost:8008/login-student";
+
+private baseUrl="http://localhost:8008";
   constructor(private httpClient: HttpClient) { }
 
 
-  loginUser(user:Studentlogin):Observable<any>{
-    console.log(user)
-  //return this.httpClient.post(`${this.baseUrl}`,user);
-  return this.httpClient.post("http://localhost:8008/login-student",user);
+  loginUser(user:Studentlogin):Observable<object>{
+    console.log(user+" ")
+
+  return this.httpClient.post(this.baseUrl+"/login-student",user);
   }
 }
