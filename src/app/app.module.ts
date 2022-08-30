@@ -25,7 +25,22 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
-import {HttpClientModule} from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http'
+import { StdRegComponent } from './components/std-reg/std-reg.component';
+import { ApplySchemeComponent } from './components/apply-scheme/apply-scheme.component';
+import { BasicDetComponent } from './components/basic-det/basic-det.component';
+import { AcadDetComponent } from './components/acad-det/acad-det.component';
+import { TenDetComponent } from './components/ten-det/ten-det.component';
+import { TwelDetComponent } from './components/twel-det/twel-det.component';
+import { FeeDetComponent } from './components/fee-det/fee-det.component';
+import { OthDetComponent } from './components/oth-det/oth-det.component';
+import { ConDetComponent } from './components/con-det/con-det.component';
+import { SubDetComponent } from './components/sub-det/sub-det.component';
+import { ReactiveFormsModule } from '@angular/forms';
+//import { HttpModule } from '@angular/http';
+//import {HttpClientModule} from '@angular/common/http';
+import { HomeComponent } from './components/home/home.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +53,18 @@ import {HttpClientModule} from '@angular/common/http'
     DescriptionComponent,
     ContactComponent,
     ScholarshipApprovalComponent,
-    ViewScholarshipComponent
+    ViewScholarshipComponent,
+    StdRegComponent,
+    ApplySchemeComponent,
+    BasicDetComponent,
+    AcadDetComponent,
+    TenDetComponent,
+    TwelDetComponent,
+    FeeDetComponent,
+    OthDetComponent,
+    ConDetComponent,
+    SubDetComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -56,10 +82,12 @@ import {HttpClientModule} from '@angular/common/http'
     MatCheckboxModule,
     MatRadioModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
   entryComponents:[ViewScholarshipComponent,ScholarshipApprovalComponent]
+
 })
 export class AppModule { }
