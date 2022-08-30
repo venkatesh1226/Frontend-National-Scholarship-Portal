@@ -22,14 +22,15 @@ export class ScholarshipApprovalService {
     
   }
 
-  editApproval(s: Scholarship): Observable<any> { 
-    for (let i = 0; i < this.scholarships.length;i++) { 
-      if (this.scholarships[i].id === s.id) { 
-        this.scholarships[i] = s;
-        break;
-      }
+  editApproval(s: Scholarship): Observable<Scholarship[]> { 
+    var body = {
+      "status":s.scholarshipStatus.approvedByNodal
     }
-    return of(this.scholarships);
+    console.log(
+    this.http.put<Scholarship[]>(this.URL + "/scholarships/status/" + s.id + "/2", 
+      s.scholarshipStatus.approvedByNodal
+    ));
+    return this.getScholarships();
   }
 
 }

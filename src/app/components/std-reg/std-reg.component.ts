@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Studentregis } from 'src/app/studentregis';
-import { StudentregistrationService } from 'src/app/studentregistration.service';
+import { StudentregistrationService } from 'src/app/services/StudentRegistrationService/studentregistration.service';
 
 @Component({
   selector: 'app-std-reg',

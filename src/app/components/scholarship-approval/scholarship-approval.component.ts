@@ -50,12 +50,16 @@ export class ScholarshipApprovalComponent implements OnInit {
 
   // TODO: create tostring methods for all details.
   convertToLargeString(item: Scholarship) {
-    // return ` ID OF APPLICATION : ${item.id} \n \n \n
-    //   STUDENT DETAILS : ${item.details} \n \n
-    //  APPROVED By INSTITUTE ${item.instituteApproval} \n\n
-    //  APPROVED BY NODAL OFFICER ${item.nodalApproval}\n\n
-    //  APPROVED BY MINISTRY ${item.ministryApproval}`
-    return "";
+    return ` ID OF APPLICATION : ${item.id} \n \n \n
+      STUDENT Aadhar Number : ${item.basicDetails.aadharNumber} \n \n
+     APPROVED By INSTITUTE ${item.academicDetails.instituteName} \n\n
+      Student State ${item.contactDetails.state}\n\n
+      Student District ${item.contactDetails.district}\n
+      Tenth Marks ${item.tenthDetails.boardName}+${item.tenthDetails.marks}
+      APPROVED BY Institute ${item.scholarshipStatus.approvedByInstitute}\n\n
+     APPROVED BY NODAL OFFICER ${item.scholarshipStatus.approvedByNodal}\n\n
+     APPROVED BY MINISTRY ${item.scholarshipStatus.approvedByMinistry}`
+    // return "";
   }
 
 }
