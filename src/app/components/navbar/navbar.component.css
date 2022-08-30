@@ -3,7 +3,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: rgb(175, 113, 250);
     display: flex;
     justify-content:space-around;
     
@@ -15,7 +15,7 @@ ul {
   
   li a {
     display: block;
-    color: white;
+    color: rgb(246, 243, 248);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -23,5 +23,5 @@ ul {
   
   /* Change the link color to #111 (black) on hover */
   li a:hover {
-    background-color: #111;
+    background-color: rgb(56, 30, 126);
   }

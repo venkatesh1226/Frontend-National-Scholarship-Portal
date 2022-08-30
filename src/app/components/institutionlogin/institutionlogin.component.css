@@ -1,8 +1,15 @@
 .main-div mat-card
 {
     padding: 0px;
+    background-color: rgb(170, 170, 246);
 }
 .login-form{
 
 padding: 20px;
+
+}
+
+.btn
+{
+    background-color: rgb(170, 170, 246);
 }

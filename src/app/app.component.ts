@@ -8,6 +8,7 @@ import { Router, ActivatedRoute, ParamMap, Params } from '@angular/router';
 })
 export class AppComponent {
   title = 'National-Scholarship-Portal-Frontend';
+  //myimage:string="assets/images/scholarship.jpg"
   name = "";
   
   constructor(
@@ -25,3 +26,4 @@ export class AppComponent {
     return this.route.url === path.trim();
   }
 }
+
