@@ -1,1 +1,13 @@
-<router-outlet> </router-outlet>
+<div class="center card" style="
+background-color: antiquewhite;" *ngIf="name==='/'">
+  <h2>
+    NATIONAL SCHOLARSHIP PORTAL
+  </h2>
+  <h3>
+    Government of India
+  </h3>
+</div>
+<app-navbar *ngIf="name==='/'"></app-navbar>
+
+<router-outlet></router-outlet>
+<app-body *ngIf="isOk('/')"></app-body>
