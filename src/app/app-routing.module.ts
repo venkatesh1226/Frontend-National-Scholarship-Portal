@@ -20,6 +20,8 @@ import { OthDetComponent } from './components/oth-det/oth-det.component';
 import { SubDetComponent } from './components/sub-det/sub-det.component';
 import { TenDetComponent } from './components/ten-det/ten-det.component';
 import { TwelDetComponent } from './components/twel-det/twel-det.component';
+import { StudenthomeComponent } from './components/studenthome/studenthome.component';
+import { InstitutionregistrationComponent } from './components/institutionregistration/institutionregistration.component';
 
 const routes: Routes = [
  
@@ -30,19 +32,22 @@ const routes: Routes = [
   {path:'studentlogin', component:StudentloginComponent},
   {path:'nodalofficerlogin', component:NodalofficerloginComponent},
   {path:'institutionlogin',component:InstitutionloginComponent},
-  {path:'institute-home',component:InstituteHomeComponent},
-  {path:'applyscheme/basicdetail',component:BasicDetComponent},
-  {path:'applyscheme/acadamicdetail',component:AcadDetComponent},
-  {path:'student-register/applyscheme',component:ApplySchemeComponent},
-  {path:'applyscheme/tenthdetail',component:TenDetComponent},
-  {path:'applyscheme/twelvedetail',component:TwelDetComponent},
-  {path:'applyscheme/acadamicdetail',component:AcadDetComponent},
-  {path:'applyscheme/feedetail',component:FeeDetComponent},
-  {path:'applyscheme/otherdetail',component:OthDetComponent},
-  {path:'applyscheme/contactdetail',component:ConDetComponent},
-  {path:'applyscheme/acadamicdetail',component:AcadDetComponent},
-  {path:'applyscheme/submitdetail',component:SubDetComponent},
-  {path:'student-register',component:HomeComponent}
+  { path: 'institute-home', component: InstituteHomeComponent },
+  {path:'applyscheme',component:ApplySchemeComponent},
+  // {path:'applyscheme/basicdetail',component:BasicDetComponent},
+  // {path:'applyscheme/acadamicdetail',component:AcadDetComponent},
+
+  // {path:'applyscheme/tenthdetail',component:TenDetComponent},
+  // {path:'applyscheme/twelvedetail',component:TwelDetComponent},
+  // {path:'applyscheme/acadamicdetail',component:AcadDetComponent},
+  // {path:'applyscheme/feedetail',component:FeeDetComponent},
+  // {path:'applyscheme/otherdetail',component:OthDetComponent},
+  // {path:'applyscheme/contactdetail',component:ConDetComponent},
+  // {path:'applyscheme/acadamicdetail',component:AcadDetComponent},
+  // {path:'applyscheme/submitdetail',component:SubDetComponent},
+  { path: 'student-register', component: HomeComponent },
+  { path: 'student-home', component: StudenthomeComponent },
+  {path:'institute-register',component:InstitutionregistrationComponent}
   
 ];
 @NgModule({

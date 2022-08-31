@@ -4,15 +4,15 @@
         <form fxLayoutAlign="stretch" fxLayout="column" class="login-form" (ngSubmit)="userLogin()">
             <mat-form-field>
                 <mat-label>Username</mat-label>
-                <input matInput type="text" [(ngModel)]="user.userID" placeholder="Username" id="userID" name="userID">
+                <input matInput type="text" [(ngModel)]="userId" placeholder="Username" id="userID" name="userID">
             </mat-form-field>
-            
+
             <mat-form-field>
                 <mat-label>Password</mat-label>
-                <input matInput type="password" [(ngModel)]="user.password" placeholder="Password" id="password" name="password" >
+                <input matInput type="password" [(ngModel)]="password" placeholder="Password" id="password"
+                    name="password">
             </mat-form-field>
-            <button mat-raised-button type="submit"> Login </button>
+            <button mat-raised-button type="submit" (click)="userLogin()"> Login </button>
         </form>
-        </mat-card>
-    </div>
-
+    </mat-card>
+</div>

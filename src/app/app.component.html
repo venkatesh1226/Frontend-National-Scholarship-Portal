@@ -10,6 +10,8 @@ background-color: rgb(102, 7, 150);" *ngIf="name==='/'">
 <app-navbar *ngIf="name==='/'"></app-navbar>
 
 <router-outlet></router-outlet>
-<app-body *ngIf="isOk('/')"></app-body>
+<app-body *ngIf="isOk('/')&& isRoleOk('NONE')"></app-body>
+<app-studenthome *ngIf="isOk('/')&& isRoleOk('STUDENT')"></app-studenthome>
+<app-institute-home *ngIf="isOk('/')&& isRoleOk('INSTITUTE')"></app-institute-home>
 
 <!-- <app-institutionregistration></app-institutionregistration> -->

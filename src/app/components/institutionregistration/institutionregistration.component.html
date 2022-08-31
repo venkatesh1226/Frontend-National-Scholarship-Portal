@@ -3,147 +3,193 @@
 
 <div class="container">
     <form class="row" [formGroup]="form" (ngSubmit)="saveInstitution()">
-        
-         <div class="col-md-10">
-             <h2>BASIC DETAILS</h2><br>
-             <div class="col-md-4">
+
+        <div class="col-md-10">
+            <h2>BASIC DETAILS</h2><br>
+            <div class="col-md-4">
                 <label for="inputInstitutionCategory" class="form-label">INSTITUTION CATEGORY</label>
-                <select id="inputInstitutionCategory" class="form-select" id="institioncategory" [ngClass]="{'is-invalid' : submitted && form.controls['institutionCategory'].errors}" formControlName="institutionCategory">
-                  <option [ngValue]="null" disabled>Select your institution category</option>
-                  <option *ngFor="let ins of allInstCategory" [ngValue]="ins"> 
-                    {{ins}}
-                  </option>
+                <select [(ngModel)]="institutionCategory" id="inputInstitutionCategory" class="form-select"
+                    id="institioncategory"
+                    [ngClass]="{'is-invalid' : submitted && form.controls['institutionCategory'].errors}"
+                    formControlName="institutionCategory">
+                    <option [ngValue]="null" disabled>Select your institution category</option>
+                    <option *ngFor="let ins of allInstCategory" [ngValue]="ins">
+                        {{ins}}
+                    </option>
                 </select>
-                </div>
-            </div><br>
-            <div class="row">
+            </div>
+        </div><br>
+        <div class="row">
             <div class="col-md-4">
                 <label for="inputName" class="form-label">Name</label>
-                <input type="text" class="form-control" [ngClass]="{'is-invalid' : submitted && form.controls['name'].errors}" formControlName="name">
-            </div ><br>
-            <div class="col-md-4" >
-            <label for="inputState" class="form-label">STATE</label>
-            <select id="inputInstitutionCategory" class="form-select" id="state" [ngClass]="{'is-invalid' : submitted && form.controls['inststate'].errors}" formControlName="inststate">
-              <option [ngValue]="null" disabled>Select state</option>
-                  <option *ngFor="let st of allState" [ngValue]="st"> 
-                    {{st}}
-                  </option>
-            </select></div>
-        </div>
-            <br>
+                <input [(ngModel)]="name" type="text" class="form-control"
+                    [ngClass]="{'is-invalid' : submitted && form.controls['name'].errors}" formControlName="name">
+            </div><br>
             <div class="col-md-4">
-                <label for="inputDistrict" class="form-label"> DISTRICT </label>
-                <input type="text" class="form-control" id="district" placeholder="" [ngClass]="{'is-invalid' : submitted && form.controls['instdistrict'].errors}" formControlName="instdistrict">
-            </div>
-            <div class="col-md-4">
-                <label for="inputIstituteCode" class="form-label"> INSTITUTE CODE</label>
-                <input type="text" class="form-control" id="institutecode" placeholder="" [ngClass]="{'is-invalid' : submitted && form.controls['institutionCode'].errors}" formControlName="institutionCode">
-            </div>
-            <div class="col-md-4">
-                <label for="email" class="form-label">EMAIL</label>
-                <input type="text" class="form-control" id="email" placeholder="" [ngClass]="{'is-invalid' : submitted && form.controls['email'].errors}" formControlName="email">
-            </div>
-            <div class="col-md-4">
-                <label for="inputDISECode" class="form-label">DISE CODE</label>
-                <input type="text" class="form-control" id="DISEcode" placeholder="" [ngClass]="{'is-invalid' : submitted && form.controls['disecode'].errors}" formControlName="disecode">
-            </div>
-            <div  class="row">
-                <label for="inputLocation" class="form-label">LOCATION :</label>
-                <div class="form-check">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                    <input class="form-check-input" type="radio" value="rural" name="location" id="flexRadioDefault1" [ngClass]="{'is-invalid' : submitted && form.controls['location'].errors}" formControlName="location">      
-                    RULAR</label>
-                </div>
-                <br>
-                <div>
-                    <label class="form-check-label" for="flexRadioDefault2"> 
-                    <input class="form-check-input" type="radio" value="urban" name="location" id="flexRadioDefault2" [ngClass]="{'is-invalid' : submitted && form.controls['location'].errors}" formControlName="location">
-                    URBAN </label>
-                </div>
-                  </div>
-            <div class="col-md-4">
-                <label for="inputIstituteType" class="form-label">INSTITUTE TYPE</label>
-                <select id="inputInstituteType" class="form-select" id="institutetype" [ngClass]="{'is-invalid' : submitted && form.controls['institutionType'].errors}" formControlName="institutionType">
-                    <option [ngValue]="null" disabled>Select type</option>
-                    <option *ngFor="let ast of allInstType" [ngValue]="ast"> 
-                      {{ast}}
-                    </option>
-                </select>
-            </div>
-            <div class="col-md-6">
-                <label for="inputAffiliatedUniversityState" class="form-label">AFFILIATED UNIVERSITY STATE</label>
-                <select id="inputAffiliatedUniversityState" class="form-select" id="affiliateduniversitystate" [ngClass]="{'is-invalid' : submitted && form.controls['affilatedUniversityState'].errors}" formControlName="affilatedUniversityState">
-                    <option [ngValue]="null" disabled>Select state</option>
-                    <option *ngFor="let st of allState" [ngValue]="st"> 
-                        {{st}}
-                    </option>
-                </select>
-                </div>
-            <div class="col-md-6">
-                <label for="inputAffiliatedUniversityBoardName" class="form-label">AFFILIATED UNIVERSITY/ BOARD NAME</label>
-                <input type="text" class="form-control" id="affiliateduniversityboardname" placeholder="" [ngClass]="{'is-invalid' : submitted && form.controls['affilatedUniversityBoardName'].errors}" formControlName="affilatedUniversityBoardName">
-            </div>
-            <div class="col-md-12">
-                <label for="inputYearFromWhichAdmissionStarted" class="form-label">YEAR FROM WHICH ADMISSION STARTED </label>
-                <input type="date" class="form-control" id="yearfromwhichadmissionstarted" placeholder="" [ngClass]="{'is-invalid' : submitted && form.controls['yearFromWhichAdmissionStarted'].errors}" formControlName="yearFromWhichAdmissionStarted">
-            </div>
-            
-            <div class="col-md-8">
-                <label for="inputSetPassword" class="form-label">Set Password</label>
-                <input type="password" class="form-control" id="setpassword" placeholder="" [ngClass]="{'is-invalid' : submitted && form.controls['setPassword'].errors}" formControlName="setPassword">
-            </div>
-            <div class="col-md-8">
-                <label for="inputConfirmPassword" class="form-label">Confirm Password</label>
-                <input type="password" id="confirmpassword" class="form-control" placeholder="" [ngClass]="{'is-invalid' : submitted && form.controls['confirmPassword'].errors}" formControlName="confirmPassword">
-              </div>
-
-              <label for="input" class="form-label"> ADDRESS:</label>
-            <div class="col-md-8">
-                <label for="inputLine1" class="form-label">LINE 1:</label>
-                <input type="text" class="form-control" id="line1" placeholder="" [ngClass]="{'is-invalid' : submitted && form.controls['addressLine1'].errors}" formControlName="addressLine1">
-            </div>
-            <div> <label for="inputLine2" class="form-label">LINE 2:</label>
-                <input type="text" class="form-control" id="line2" placeholder="" [ngClass]="{'is-invalid' : submitted && form.controls['addressLine2'].errors}" formControlName="addressLine2">
-            </div>
-            <div> <label for="inputCity" class="form-label">CITY :</label>
-                <input type="text" class="form-control" id="city" placeholder="" [ngClass]="{'is-invalid' : submitted && form.controls['city'].errors}" formControlName="city">
-            </div>
-            <div class="col-md-8">
                 <label for="inputState" class="form-label">STATE</label>
-                <select id="inputState" class="form-select" id="state" [ngClass]="{'is-invalid' : submitted && form.controls['state'].errors}" formControlName="state">
+                <select [(ngModel)]="instState" id="inputInstitutionCategory" class="form-select" id="state"
+                    [ngClass]="{'is-invalid' : submitted && form.controls['inststate'].errors}"
+                    formControlName="inststate">
                     <option [ngValue]="null" disabled>Select state</option>
-                    <option *ngFor="let st of allState" [ngValue]="st"> 
+                    <option *ngFor="let st of allState" [ngValue]="st">
                         {{st}}
                     </option>
                 </select>
-                </div>
-                <div> <label for="inputDistrict" class="form-label">DISTRICT :</label>
-                    <input type="text" class="form-control" id="DISTRICT" placeholder="" [ngClass]="{'is-invalid' : submitted && form.controls['district'].errors}" formControlName="district">
-                </div>
-                <div> <label for="inputPinCode" class="form-label">PINE CODE :</label>
-                    <input type="number" class="form-control" id="pincode" placeholder="" [ngClass]="{'is-invalid' : submitted && form.controls['pincode'].errors}" formControlName="pincode">
-                </div>
-                <label for="input" class="form-label">CONTACT DETAILS:</label>
-                <div class="col-md-8">
-                    <label for="inputPrincipalName" class="form-label">PRINCIPAL NAME :</label>
-                    <input type="text" class="form-control" id="line1" placeholder="" [ngClass]="{'is-invalid' : submitted && form.controls['principleName'].errors}" formControlName="principleName">
-                </div>
-                <div> <label for="inputMobileNumber" class="form-label">MOBILE NUMBER :</label>
-                    <input type="number" class="form-control" id="line2" placeholder="" [ngClass]="{'is-invalid' : submitted && form.controls['mobileNumber'].errors}" formControlName="mobileNumber">
-                </div>
-                <div> <label for="inputTelephone" class="form-label">TELEPHONE :</label>
-                    <input type="number" class="form-control" id="telephone" placeholder="" [ngClass]="{'is-invalid' : submitted && form.controls['telephone'].errors}" formControlName="telephone">
-                </div>
-                <div class="form-check" class="col-md-10">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                    <label class="form-check-label" for="flexCheckChecked" >
-                      ALL THE DETAILS AND DOCUMENTS SUBMITTED BY US ARE VALID AND TRUE.
-                      IF FOUND GUILTY OF SUBMITTING INVALID DOCUMENTS, WE MAY BE HELD RESPONSIBLE FOR THAT ACT BY US.
-                    </label>
-                  </div>
-                 <div > <button [disabled]="!form.valid" class="btn btn-primary" type="submit">SUBMIT</button>
-    
-                <button class="btn btn-primary" type="reset" value="Reset">RESET</button>
-                </div>
+            </div>
+        </div>
+        <br>
+        <div class="col-md-4">
+            <label for="inputDistrict" class="form-label"> DISTRICT </label>
+            <input [(ngModel)]="instDistrict" type="text" class="form-control" id="district" placeholder=""
+                [ngClass]="{'is-invalid' : submitted && form.controls['instdistrict'].errors}"
+                formControlName="instdistrict">
+        </div>
+        <div class="col-md-4">
+            <label for="inputIstituteCode" class="form-label"> INSTITUTE CODE</label>
+            <input [(ngModel)]="institutionCode" type="text" class="form-control" id="institutecode" placeholder=""
+                [ngClass]="{'is-invalid' : submitted && form.controls['institutionCode'].errors}"
+                formControlName="institutionCode">
+        </div>
+        <div class="col-md-4">
+            <label for="email" class="form-label">EMAIL</label>
+            <input [(ngModel)]="email" type="text" class="form-control" id="email" placeholder=""
+                [ngClass]="{'is-invalid' : submitted && form.controls['email'].errors}" formControlName="email">
+        </div>
+        <div class="col-md-4">
+            <label for="inputDISECode" class="form-label">DISE CODE</label>
+            <input [(ngModel)]="diseCode" type="text" class="form-control" id="DISEcode" placeholder=""
+                [ngClass]="{'is-invalid' : submitted && form.controls['disecode'].errors}" formControlName="disecode">
+        </div>
+        <div class="row">
+            <label for="inputLocation" class="form-label">LOCATION :</label>
+            <div class="form-check">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    <input class="form-check-input" type="radio" value="rural" name="location" id="flexRadioDefault1"
+                        [ngClass]="{'is-invalid' : submitted && form.controls['location'].errors}"
+                        formControlName="location">
+                    RULAR</label>
+            </div>
+            <br>
+            <div>
+                <label class="form-check-label" for="flexRadioDefault2">
+                    <input class="form-check-input" type="radio" value="urban" name="location" id="flexRadioDefault2"
+                        [ngClass]="{'is-invalid' : submitted && form.controls['location'].errors}"
+                        formControlName="location">
+                    URBAN </label>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label for="inputIstituteType" class="form-label">INSTITUTE TYPE</label>
+            <select [(ngModel)]="institutionType" id="inputInstituteType" class="form-select" id="institutetype"
+                [ngClass]="{'is-invalid' : submitted && form.controls['institutionType'].errors}"
+                formControlName="institutionType">
+                <option [ngValue]="null" disabled>Select type</option>
+                <option *ngFor="let ast of allInstType" [ngValue]="ast">
+                    {{ast}}
+                </option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <label for="inputAffiliatedUniversityState" class="form-label">AFFILIATED UNIVERSITY STATE</label>
+            <select [(ngModel)]="affiliatedUnivState" id="inputAffiliatedUniversityState" class="form-select"
+                id="affiliateduniversitystate"
+                [ngClass]="{'is-invalid' : submitted && form.controls['affilatedUniversityState'].errors}"
+                formControlName="affilatedUniversityState">
+                <option [ngValue]="null" disabled>Select state</option>
+                <option *ngFor="let st of allState" [ngValue]="st">
+                    {{st}}
+                </option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <label for="inputAffiliatedUniversityBoardName" class="form-label">AFFILIATED UNIVERSITY/ BOARD NAME</label>
+            <input [(ngModel)]="affiliatedUnivBoard" type="text" class="form-control" id="affiliateduniversityboardname"
+                placeholder=""
+                [ngClass]="{'is-invalid' : submitted && form.controls['affilatedUniversityBoardName'].errors}"
+                formControlName="affilatedUniversityBoardName">
+        </div>
+        <div class="col-md-12">
+            <label for="inputYearFromWhichAdmissionStarted" class="form-label">YEAR FROM WHICH ADMISSION STARTED
+            </label>
+            <input [(ngModel)]="startAdmitYear" type="date" class="form-control" id="yearfromwhichadmissionstarted"
+                placeholder=""
+                [ngClass]="{'is-invalid' : submitted && form.controls['yearFromWhichAdmissionStarted'].errors}"
+                formControlName="yearFromWhichAdmissionStarted">
+        </div>
+
+        <div class="col-md-8">
+            <label for="inputSetPassword" class="form-label">Set Password</label>
+            <input [(ngModel)]="setPassword" type="password" class="form-control" id="setpassword" placeholder=""
+                [ngClass]="{'is-invalid' : submitted && form.controls['setPassword'].errors}"
+                formControlName="setPassword">
+        </div>
+        <div class="col-md-8">
+            <label for="inputConfirmPassword" class="form-label">Confirm Password</label>
+            <input [(ngModel)]="confirmPassword" type="password" id="confirmpassword" class="form-control"
+                placeholder="" [ngClass]="{'is-invalid' : submitted && form.controls['confirmPassword'].errors}"
+                formControlName="confirmPassword">
+        </div>
+
+        <label for="input" class="form-label"> ADDRESS:</label>
+        <div class="col-md-8">
+            <label for="inputLine1" class="form-label">LINE 1:</label>
+            <input [(ngModel)]="addressLine1" type="text" class="form-control" id="line1" placeholder=""
+                [ngClass]="{'is-invalid' : submitted && form.controls['addressLine1'].errors}"
+                formControlName="addressLine1">
+        </div>
+        <div> <label for="inputLine2" class="form-label">LINE 2:</label>
+            <input [(ngModel)]="addressLine2" type="text" class="form-control" id="line2" placeholder=""
+                [ngClass]="{'is-invalid' : submitted && form.controls['addressLine2'].errors}"
+                formControlName="addressLine2">
+        </div>
+        <div> <label for="inputCity" class="form-label">CITY :</label>
+            <input [(ngModel)]="city" type="text" class="form-control" id="city" placeholder=""
+                [ngClass]="{'is-invalid' : submitted && form.controls['city'].errors}" formControlName="city">
+        </div>
+        <div class="col-md-8">
+            <label for="inputState" class="form-label">STATE</label>
+            <select [(ngModel)]="state" id="inputState" class="form-select" id="state"
+                [ngClass]="{'is-invalid' : submitted && form.controls['state'].errors}" formControlName="state">
+                <option [ngValue]="null" disabled>Select state</option>
+                <option *ngFor="let st of allState" [ngValue]="st">
+                    {{st}}
+                </option>
+            </select>
+        </div>
+        <div> <label for="inputDistrict" class="form-label">DISTRICT :</label>
+            <input [(ngModel)]="district" type="text" class="form-control" id="DISTRICT" placeholder=""
+                [ngClass]="{'is-invalid' : submitted && form.controls['district'].errors}" formControlName="district">
+        </div>
+        <div> <label for="inputPinCode" class="form-label">PIN CODE :</label>
+            <input [(ngModel)]="pincode" type="number" class="form-control" id="pincode" placeholder=""
+                [ngClass]="{'is-invalid' : submitted && form.controls['pincode'].errors}" formControlName="pincode">
+        </div>
+        <label for="input" class="form-label">CONTACT DETAILS:</label>
+        <div class="col-md-8">
+            <label for="inputPrincipalName" class="form-label">PRINCIPAL NAME :</label>
+            <input [(ngModel)]="principleName" type="text" class="form-control" id="line1" placeholder=""
+                [ngClass]="{'is-invalid' : submitted && form.controls['principleName'].errors}"
+                formControlName="principleName">
+        </div>
+        <div> <label for="inputMobileNumber" class="form-label">MOBILE NUMBER :</label>
+            <input [(ngModel)]="mobileNumber" type="number" class="form-control" id="line2" placeholder=""
+                [ngClass]="{'is-invalid' : submitted && form.controls['mobileNumber'].errors}"
+                formControlName="mobileNumber">
+        </div>
+        <div> <label for="inputTelephone" class="form-label">TELEPHONE :</label>
+            <input [(ngModel)]="telephone" type="number" class="form-control" id="telephone" placeholder=""
+                [ngClass]="{'is-invalid' : submitted && form.controls['telephone'].errors}" formControlName="telephone">
+        </div>
+        <div class="form-check" class="col-md-10">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+            <label class="form-check-label" for="flexCheckChecked">
+                ALL THE DETAILS AND DOCUMENTS SUBMITTED BY US ARE VALID AND TRUE.
+                IF FOUND GUILTY OF SUBMITTING INVALID DOCUMENTS, WE MAY BE HELD RESPONSIBLE FOR THAT ACT BY US.
+            </label>
+        </div>
+        <div> <button [disabled]="!form.valid" class="btn btn-primary" type="submit">SUBMIT</button>
+
+            <button class="btn btn-primary" type="reset" value="Reset" (click)="saveInstitution()">RESET</button>
+        </div>
     </form>
-    </div>
+</div>

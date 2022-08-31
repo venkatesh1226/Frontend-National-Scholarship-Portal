@@ -1,82 +1,40 @@
-<router-outlet></router-outlet>
-<div class="alert">
-  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-  <strong>Guide:-</strong> Submit to fill Acadamic Detail.
+<div class="basic">
+  <h1>BASIC DETAILS</h1>
+  <form class="row g-3" #basicDetailsForm="ngForm">
+    <div class="col-4">
+      <label for="inputEmail" class="form-label">Registered Email</label>
+      <input type="text" name="loginid" class="form-control" id="email" placeholder="" [(ngModel)]="regEmail">
+    </div>
+    <div class="col-md-6">
+      <label for="inputAadhar" class="form-label">AADHAR NUMBER</label>
+      <input type="number" name="aadharno" class="form-control" id="aadhar" [(ngModel)]="adhar">
+    </div>
+    <div class="col-md-4">
+      <label for="inputReligion" class="form-label">RELIGION</label>
+      <select id="inputReligion" name="religion" class="form-select" id="religion" [(ngModel)]="relig">
+        <option selected>select your religion</option>
+        <option>Hindu</option>
+        <option>Muslim</option>
+        <option>Christian</option>
+        <option>Sikh</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="col-6">
+      <label for="inputCommunity" class="form-label">COMMUNITY/CATEGORY</label>
+      <input type="text" name="community" class="form-control" id="community" placeholder="" [(ngModel)]="commu">
+    </div>
+    <div class="col-6">
+      <label for="inputFatherName" class="form-label">FATHER NAME</label>
+      <input type="text" name="fatherName" class="form-control" id="fathername" [(ngModel)]="fName">
+    </div>
+    <div class="col-md-6">
+      <label for="inputMotherName" class="form-label">MOTHER NAME</label>
+      <input type="text" name="motherName" class="form-control" id="mothername" [(ngModel)]="mName">
+    </div>
+    <div class="col-md-6">
+      <label for="inputfamilyannualincome" class="form-label">FAMILY ANNUAL INCOME</label>
+      <input type="number" name="annualIncome" id="annualincome" class="form-control" [(ngModel)]="income">
+    </div>
+  </form>
 </div>
-<div class="wrapper">
-    <div class="shadow p-3 mb-5 bg-body rounded">
-  <ul class="nav nav-pills">
-    <li class="nav-item">
-      <a class="nav-link active" aria-current="page" >BasicDetails</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link active" aria-current="page" >AcademicDetails</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link active" aria-current="page" >TenthDetails</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link active" aria-current="page" >TwelthDetails</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link active" aria-current="page" >FeeDetails</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link active" aria-current="page" >OtherDetails</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link active"  aria-current="page" >ContactDetails</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link active" aria-current="page" >SubmitDetails</a>
-    </li>
-  </ul>
-    </div>
-  
-  <div class="basic">
-      <h1>BASIC DETAILS</h1>
-    <form class="row g-3" #basicDetailsForm="ngForm" (ngSubmit)="saveBasicDetails(basicDetailsForm)">
-      <div class="col-4">
-        <label for="inputEmail" class="form-label">Registered Email</label>
-        <input type="text" name="loginid" class="form-control" id="email" placeholder="" ngModel >
-    </div>
-        <div class="col-md-6">
-          <label for="inputAadhar" class="form-label">AADHAR NUMBER</label>
-          <input type="number" name="aadharno" class="form-control" id="aadhar" ngModel>
-        </div>
-        <div class="col-md-4">
-            <label for="inputReligion" class="form-label">RELIGION</label>
-            <select id="inputReligion" name="religion" class="form-select" id="religion" ngModel>
-              <option selected>select your religion</option>
-              <option>Hindu</option>
-              <option>Muslim</option>
-              <option>Christian</option>
-              <option>Sikh</option>
-              <option>Other</option>
-            </select>
-          </div>
-        <div class="col-6">
-          <label for="inputCommunity" class="form-label">COMMUNITY/CATEGORY</label>
-          <input type="text" name="community" class="form-control" id="community" placeholder="" ngModel>
-        </div>
-        <div class="col-6">
-          <label for="inputFatherName" class="form-label">FATHER NAME</label>
-          <input type="text" name="fatherName" class="form-control" id="fathername" ngModel>
-        </div>
-        <div class="col-md-6">
-          <label for="inputMotherName" class="form-label">MOTHER NAME</label>
-          <input type="text" name="motherName" class="form-control" id="mothername" ngModel>
-        </div>
-        <div class="col-md-6">
-          <label for="inputfamilyannualincome" class="form-label">FAMILY ANNUAL INCOME</label>
-          <input type="number" name="annualIncome" id="annualincome" class="form-control" ngModel>
-        </div>
-        <div class="col-12">
-          <button ><a href="http://localhost:4200/applyscheme/acadamicdetail">Submit</a></button>
-        </div>
-      </form>
-    </div>
-    <br><br>
-  </div>
-    
-  

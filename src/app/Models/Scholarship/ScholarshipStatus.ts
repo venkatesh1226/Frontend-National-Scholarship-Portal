@@ -1,5 +1,5 @@
 export interface ScholarshipStatus { 
-    id: number,
+    id?: number,
     approvedByInstitute: string,
     approvedByNodal: string,
     approvedByMinistry:string

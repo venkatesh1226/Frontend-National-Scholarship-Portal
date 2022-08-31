@@ -1,5 +1,5 @@
 export interface OtherDetails { 
-    id: number,
+    id?: number,
     isDisabled: boolean,
     disabilityName: string,
     disabilityPercentage: number,

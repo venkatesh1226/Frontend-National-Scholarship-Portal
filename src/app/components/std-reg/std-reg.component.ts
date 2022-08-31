@@ -46,23 +46,23 @@ export class StdRegComponent implements OnInit {
   });
 
   student:Studentregis=new Studentregis();
-  saveStudent()
-  {
-      this.student = JSON.parse(localStorage.getItem('student')!);
-      console.log(this.form.value)
-      console.log(this.student)
+  // saveStudent()
+  // {
+  //     this.student = JSON.parse(localStorage.getItem('student')!);
+  //     console.log(this.form.value)
+  //     console.log(this.student)
 
-      this.vhs.addStudent(this.student).subscribe(
-        (data: any)=>{
-          console.log(data);
-          alert("Registration done")
-        },
-        (error: any)=>
-        {
-          console.log(error)
-        }
-      )
-  }
+  //     this.vhs.addStudent(this.student).subscribe(
+  //       (data: any)=>{
+  //         console.log(data);
+  //         alert("Registration done")
+  //       },
+  //       (error: any)=>
+  //       {
+  //         console.log(error)
+  //       }
+  //     )
+  // }
 
   submit(){
     

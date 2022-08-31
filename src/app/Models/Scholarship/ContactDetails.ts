@@ -1,5 +1,5 @@
 export interface ContactDetails { 
-    id: number,
+    id?: number,
     state: string,
     district: string,
     block: string,

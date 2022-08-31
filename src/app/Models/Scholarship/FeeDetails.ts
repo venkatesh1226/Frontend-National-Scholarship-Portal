@@ -1,5 +1,5 @@
 export interface FeeDetails { 
-    id: number,
+    id?: number,
     admissionFee: number,
     tuitionFee: number,
     otherFee:number

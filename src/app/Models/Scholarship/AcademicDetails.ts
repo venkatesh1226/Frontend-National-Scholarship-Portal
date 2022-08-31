@@ -1,10 +1,10 @@
 export interface AcademicDetails { 
-    id: number,
+    id?: number,
     instituteName:string,
     currentCourse: string,
     presentYear: number,
     modeOfStudy: string,
-    startData: Date,
+    startDate: Date,
     boardName: string,
     prevCourse: string,
     prevPassingYear: number,

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AcademicdetailsService } from 'src/app/academicdetails.service';
 
 @Component({
   selector: 'app-acad-det',
@@ -18,26 +17,10 @@ export class AcadDetComponent implements OnInit {
     prevClass!:string;
     prevClassPer!:string;
 
-  constructor(private myrouter:Router,private aca:AcademicdetailsService) { }
+  constructor(private myrouter:Router) { }
 
   ngOnInit(): void {
   }
 
-  saveAcademicDetails(academicDetailsForm:any){
-    this.academicDetails=academicDetailsForm.value;
-    console.log(academicDetailsForm.value);
-    console.log(this.academicDetails);
-    this.aca.addAcademicDetails(this.academicDetails).subscribe(
-      (data)=>{
-        console.log(data);
-        console.log("Persisted");
-        this.myrouter.navigate(['/TenthDetails']);
-      },
-      (error)=>{
-         console.log(error)
-      }
-      )
-} 
-   
 
 }

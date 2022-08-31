@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap, Params } from '@angular/router';
+import { CurrentUser } from './CurrentUser';
 
 
 @Component({
@@ -8,6 +9,7 @@ import { Router, ActivatedRoute, ParamMap, Params } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  user:CurrentUser = CurrentUser.Instance;
   title = 'National-Scholarship-Portal-Frontend';
   //myimage:string="assets/images/scholarship.jpg"
   name = "";
@@ -26,6 +28,10 @@ export class AppComponent {
   isOk(path: string) { 
     return this.route.url === path.trim();
   }
-
+  isRoleOk(role: string) { 
+    console.log(role);
+    if (role === 'NONE') return this.user.login === null;
+    return this.user.getLogin().role === role.trim();
+  }
 }
 

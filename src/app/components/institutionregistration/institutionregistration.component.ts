@@ -1,7 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
-import { InstitutionApiServiceService } from 'src/app/institution-api-service.service';
+import { InstitutionApiServiceService } from 'src/app/services/InstituteService/institution-api-service.service';
+import { InstituteReg } from 'src/app/Models/instituteReg';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-institutionregistration',
@@ -9,8 +11,33 @@ import { InstitutionApiServiceService } from 'src/app/institution-api-service.se
   styleUrls: ['./institutionregistration.component.css']
 })
 export class InstitutionregistrationComponent implements OnInit {
+  instituteReg!: InstituteReg
+  
+  institutionCategory!: string;
+  name!: string;
+  instState!: string;
+  instDistrict!: string;
+  institutionCode!: string;
+  email!: string;
+  diseCode!: string;
+  location!: string;
+  institutionType!: string;
+  affiliatedUnivState!: string;
+  affiliatedUnivBoard!: string;
+  startAdmitYear!: string;
+  setPassword!: string;
+  confirmPassword!: string;
+  addressLine1!: string;
+  addressLine2!: string;
+  city!: string;
+  state!: string;
+  district!: string;
+  pincode!: string;
+  principleName!: string;
+  mobileNumber!: string;
+  telephone!: string;
 
-  constructor(private FormBuilder: FormBuilder, private institutionApi: InstitutionApiServiceService) { }
+  constructor(private FormBuilder: FormBuilder, private institutionApi: InstitutionApiServiceService, private route:Router) { }
 
   submitted = false;
 
@@ -81,8 +108,14 @@ allInstType: string [] = [
       return;
     }
 
-    this.institutionApi.register(this.form.value).subscribe(
-      response => console.log("Success!", response),
+    this.fill();
+
+    this.institutionApi.register(this.instituteReg).subscribe(
+      (data: InstituteReg) => {
+        console.log("Success!")
+        alert("Successfully Registered, Navigating to Login Page")
+        this.navigate();
+      },
       error => console.log("Error!", error)
     );
 
@@ -92,5 +125,37 @@ allInstType: string [] = [
     console.log(this.form.value);
   }
 
+  fill() {
+    this.instituteReg = {
+      institutionCategory: this.institutionCategory,
+    name: this.name,
+    instState: this.instState,
+    instDistrict: this.instDistrict,
+    institutionCode: this.institutionCode,
+    email: this.email,
+    diseCode: this.diseCode,
+    location: this.location,
+    institutionType: this.institutionType,
+    affiliatedUnivState: this.affiliatedUnivState,
+    affiliatedUnivBoard: this.affiliatedUnivBoard,
+    startAdmitYear: this.startAdmitYear,
+    setPassword: this.setPassword,
+    confirmPassword: this.confirmPassword,
+    addressLine1: this.addressLine1,
+    addressLine2: this.addressLine2,
+    city: this.city,
+    state: this.state,
+    district: this.district,
+    pincode: this.pincode,
+    principleName: this.principleName,
+    mobileNumber: this.mobileNumber,
+    telephone:this.telephone
+    }
+  }
+
+  validate(){}
+  navigate() {
+    this.route.navigate(["../institutionlogin"]);
+}
 
 }

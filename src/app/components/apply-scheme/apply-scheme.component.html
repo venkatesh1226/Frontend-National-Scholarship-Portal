@@ -1,13 +1,19 @@
 <body>
+  <app-basic-det #basic></app-basic-det>
+  <app-acad-det #acad></app-acad-det>
+  <app-ten-det #ten></app-ten-det>
+  <app-twel-det #twel></app-twel-det>
+  <app-fee-det #fee></app-fee-det>
+  <app-oth-det #other></app-oth-det>
+  <app-con-det #con></app-con-det>
+  <app-sub-det #sub></app-sub-det>
 
-  <div class="alert">
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-    <strong>Guide:-</strong> Please Click on Basic Detail to start filling form.
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary"
+      (click)="submit(basic,acad,ten,twel,fee,other,con,sub)">Submit</button>
   </div>
-  
-
 </body>
-
+<!-- 
 <div class="wrapper">
     <div class="shadow p-3 mb-5 bg-body rounded">
   <ul class="nav nav-pills">
@@ -53,4 +59,4 @@ REQUIRED DOCUMENT
 
   
 
-  <router-outlet></router-outlet>
+  <router-outlet></router-outlet> -->

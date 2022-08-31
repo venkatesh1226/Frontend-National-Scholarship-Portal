@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Nodalofficerlogin } from 'src/app/nodalofficerlogin';
 
 @Component({
   selector: 'app-nodalofficerlogin',
@@ -7,7 +6,11 @@ import { Nodalofficerlogin } from 'src/app/nodalofficerlogin';
   styleUrls: ['./nodalofficerlogin.component.css']
 })
 export class NodalofficerloginComponent implements OnInit {
-  user:Nodalofficerlogin= new Nodalofficerlogin();
+
+  userId!: string;
+  password!: string;
+  role="NODAL"
+
   constructor() { }
 
   ngOnInit(): void {
@@ -15,6 +18,5 @@ export class NodalofficerloginComponent implements OnInit {
 
   userLogin()
   {
-    console.log(this.user)
   }
 }

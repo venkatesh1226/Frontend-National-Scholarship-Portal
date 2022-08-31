@@ -8,6 +8,7 @@ import { ten_det } from "./ten_det";
 import { twel_det } from "./twel_det";
 
 export interface std_regi{
+    id?: number;
     state:string;
     district:string;
     name:string;
@@ -16,18 +17,18 @@ export interface std_regi{
     mobile:string;
     email:string;
     instCode:string;
-    adhar:string;
+    aadhar:string;
     ifsc:string;
     bankAcc:string;
     bankName:string;
     password:string;
-    basicDet:basic_det
-    acadamicDet:acadamic_det;
-    tenthDet:ten_det;
-    twelthDet:twel_det;
-    feeDet:fee_det;
-    othDet:oth_det;
-    conDet: con_det;
-    subDet: sub_det;
+    // basicDet:basic_det
+    // acadamicDet:acadamic_det;
+    // tenthDet:ten_det;
+    // twelthDet:twel_det;
+    // feeDet:fee_det;
+    // othDet:oth_det;
+    // conDet: con_det;
+    // subDet: sub_det;
 
 }

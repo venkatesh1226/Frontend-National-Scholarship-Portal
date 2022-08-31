@@ -8,7 +8,7 @@ import { TenthDetails } from "./TenthDetails";
 import { TwelfthDetails } from "./TwelfthDetails";
 
 export interface Scholarship { 
-    id: number;
+    id?: number;
     studentId: number,
     schemeName: string,
     basicDetails: BasicDetails,

@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Studentregis } from 'src/app/studentregis';
 import { StudentregistrationService } from 'src/app/services/StudentRegistrationService/studentregistration.service';
+import { std_regi } from 'src/app/Models/std_regi';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -23,8 +25,10 @@ export class HomeComponent implements OnInit {
     bankAcc!:string;
     bankName!:string;
     password!:string;
-    cPassword!:string;
-  constructor(private vhs:StudentregistrationService,myHttp:HttpClient) { }
+  cPassword!: string;
+  stdReg!: std_regi;
+  success: boolean=false;
+  constructor(private serve:StudentregistrationService,private router:Router) { }
 
 
   ngOnInit(): void {
@@ -49,14 +53,21 @@ export class HomeComponent implements OnInit {
   student:Studentregis=new Studentregis();
   saveStudent()
   {
+    this.fill();
+    this.validate();
+    console.log(this.stdReg.state)
+    console.log(this.state)
       this.student = JSON.parse(localStorage.getItem('student')!);
       console.log(this.form.value)
       console.log(this.student)
 
-      this.vhs.addStudent(this.student).subscribe(
-        (data: any)=>{
-          console.log(data);
-          alert("Registration done")
+      this.serve.addStudent(this.stdReg).subscribe(
+        (data: std_regi)=>{
+          console.log(data.id);
+          console.log(data.name);
+          alert("Registration done!!")
+          this.navigate();
+          this.success = true;
         },
         (error: any)=>
         {
@@ -65,8 +76,34 @@ export class HomeComponent implements OnInit {
       )
   }
 
-  submit(){
-    
+  fill() { 
+    this.stdReg = {
+      state: this.state,
+      district: this.district,
+      name: this.name,
+      dob: this.dob,
+      gender: this.gender,
+      mobile: this.mobile,
+      email: this.email,
+      instCode: this.instCode,
+      aadhar: this.adhar,
+      ifsc: this.ifsc,
+      bankAcc: this.bankAcc,
+      bankName: this.bankName,
+      password: this.password
+      
+    }
+    console.log("********");
+    console.log(this.stdReg);
+    console.log("*********");
+  }
+
+  validate(){
+    //todo validate all fields
+  }
+
+  navigate() { 
+    this.router.navigate(["../studentlogin"]);
   }
 
 }
