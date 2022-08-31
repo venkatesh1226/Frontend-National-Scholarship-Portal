@@ -29,8 +29,14 @@ export class AppComponent {
     return this.route.url === path.trim();
   }
   isRoleOk(role: string) { 
-    console.log(role);
-    if (role === 'NONE') return this.user.login === null;
+
+    if (role === 'NONE') {
+      console.log(this.user.getLogin());
+      return this.user.getLogin() === undefined;
+    
+    }
+    if (this.user.getLogin() === undefined)
+      return false;
     return this.user.getLogin().role === role.trim();
   }
 }
