@@ -17,7 +17,7 @@ import { TenDetComponent } from '../ten-det/ten-det.component';
 import { TwelDetComponent } from '../twel-det/twel-det.component';
 import { FeeDetails } from 'src/app/Models/Scholarship/FeeDetails';
 import { ContactDetails } from 'src/app/Models/Scholarship/ContactDetails';
-import { ScholarshipAddService } from 'src/app/services/addScholarshipService/scholarship-add.service';
+import { ScholarshipAddService } from 'src/app/services/AddScholarshipService/scholarship-add.service';
 import { Router } from '@angular/router';
 import { AppComponent } from 'src/app/app.component';
 
