@@ -3,6 +3,7 @@ import { Scholarship } from 'src/app/Models/Scholarship/Scholarship';
 import { ScholarshipApprovalService } from 'src/app/services/scholarship-approval.service';
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 import { ViewScholarshipComponent } from '../view-scholarship/view-scholarship.component';
+import { AppComponent } from 'src/app/app.component';
 @Component({
   selector: 'app-scholarship-approval',
   templateUrl: './scholarship-approval.component.html',
@@ -11,13 +12,15 @@ import { ViewScholarshipComponent } from '../view-scholarship/view-scholarship.c
 export class ScholarshipApprovalComponent implements OnInit {
 
   
-  scholarships: Scholarship[]=[];
-  constructor(private service:ScholarshipApprovalService, public dialog:MatDialog) { 
+  scholarships: Scholarship[] = [];
+  role!: string;
+  constructor(private service:ScholarshipApprovalService, public dialog:MatDialog,private parent:AppComponent) { 
     
   }
 
   ngOnInit(): void {
-    this.service.getScholarships().subscribe((items:Scholarship[])=>(this.scholarships=items));
+    this.service.getScholarships().subscribe((items: Scholarship[]) => (this.scholarships = items));
+    this.role = this.parent.user.getLogin().role;
   }
 
   //TODO ACCORDING TO LOGGED IN USER APPROVE RELEVANT FIELD
@@ -25,19 +28,18 @@ export class ScholarshipApprovalComponent implements OnInit {
   approve(item: Scholarship) {
     //BY DEFAULT ADDED NODAL OFFICER APPROVAL 
     //BUT AFTER REST API CREATION CODE NEED TO BE CHANGED.
-    item.scholarshipStatus.approvedByNodal="Accepted by Nodal Officer"
-    this.service.editApproval(item).subscribe((items: Scholarship[]) => (this.scholarships = items));
+    item.scholarshipStatus.approvedByNodal = "Accepted by " + this.role.toLowerCase() + " Officer";
+    this.service.editApproval(item,this.role).subscribe((items: Scholarship[]) => (this.scholarships = items));
    }
 
   reject(item: Scholarship) {
     item.scholarshipStatus.approvedByNodal = "Not Accepted By Nodal Officer";
-    this.service.editApproval(item).subscribe((items: Scholarship[]) => (this.scholarships = items));
+    this.service.editApproval(item,this.role).subscribe((items: Scholarship[]) => (this.scholarships = items));
    }
   
   more(item: Scholarship) {
     const dialogConfig = new MatDialogConfig();
 
-    // dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
 
     dialogConfig.data=this.convertToLargeString(item);

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-studenthome',
@@ -7,11 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudenthomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(public parent: AppComponent) { }
 
   ngOnInit(): void {
   }
 
-  logedin = "Shubhankar";
+  logedin = this.parent.user.getStudent().name.toUpperCase();
 
 }

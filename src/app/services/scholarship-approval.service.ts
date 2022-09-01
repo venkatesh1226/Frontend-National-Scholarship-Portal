@@ -22,14 +22,22 @@ export class ScholarshipApprovalService {
     
   }
 
-  editApproval(s: Scholarship): Observable<Scholarship[]> { 
-    var body = {
-      "status":s.scholarshipStatus.approvedByNodal
+  editApproval(s: Scholarship,role:String): Observable<Scholarship[]> { 
+    var roleNum: number;
+    if (role === 'NODAL') {
+      roleNum = 2;
     }
-    console.log(
-    this.http.put<Scholarship[]>(this.URL + "/scholarships/status/" + s.id + "/2", 
+    else if (role === 'MINISTRY') {
+      roleNum = 3;
+    }
+    else
+      roleNum = 1;
+    
+    this.http.put<Scholarship[]>(this.URL + "/scholarships/status/" + s.id + "/"+roleNum, 
       s.scholarshipStatus.approvedByNodal
-    ));
+    )
+    console.log("************");
+    console.log(s.id);
     return this.getScholarships();
   }
 

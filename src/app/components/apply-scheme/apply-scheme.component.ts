@@ -19,6 +19,7 @@ import { FeeDetails } from 'src/app/Models/Scholarship/FeeDetails';
 import { ContactDetails } from 'src/app/Models/Scholarship/ContactDetails';
 import { ScholarshipAddService } from 'src/app/services/addScholarshipService/scholarship-add.service';
 import { Router } from '@angular/router';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-apply-scheme',
@@ -81,7 +82,7 @@ export class ApplySchemeComponent implements OnInit {
   approvedByMinistry: string = "Not Received";
 
 
-  constructor(private serve:ScholarshipAddService,private route:Router) { }
+  constructor(private serve:ScholarshipAddService,private route:Router,private parent:AppComponent) { }
 
   ngOnInit(): void {
   }
@@ -132,7 +133,7 @@ export class ApplySchemeComponent implements OnInit {
 
   //TODO: Validate
   validate() { 
-
+    
   }
 
   fill() { 
@@ -221,7 +222,8 @@ export class ApplySchemeComponent implements OnInit {
   }
 
   getStudent(): number{//update after login
-    return 27;
+    var id = this.parent.user.getStudent().id;
+    return id == undefined ? 27 : id;
   }
 
 }

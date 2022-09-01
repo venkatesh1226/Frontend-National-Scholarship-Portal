@@ -13,5 +13,6 @@ background-color: rgb(102, 7, 150);" *ngIf="name==='/'">
 <app-body *ngIf="isOk('/')&& isRoleOk('NONE')"></app-body>
 <app-studenthome *ngIf="isOk('/')&& isRoleOk('STUDENT')"></app-studenthome>
 <app-institute-home *ngIf="isOk('/')&& isRoleOk('INSTITUTE')"></app-institute-home>
+<app-scholarship-approval *ngIf="isOk('/')&& isRoleOk('NODAL')"></app-scholarship-approval>
 
 <!-- <app-institutionregistration></app-institutionregistration> -->
