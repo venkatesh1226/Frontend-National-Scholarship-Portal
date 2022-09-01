@@ -90,7 +90,6 @@ export class ApplySchemeComponent implements OnInit {
   submit(basic: BasicDetComponent, acad: AcadDetComponent, ten: TenDetComponent,
     twel: TwelDetComponent, fee: FeeDetComponent, oth: OthDetComponent, con: ConDetComponent,
     sub: SubDetComponent) {
-    console.log(basic.adhar);
     this.aadharNumber = basic.adhar;
     this.religion = basic.relig;
     this.communityCategory = basic.commu;
@@ -128,7 +127,6 @@ export class ApplySchemeComponent implements OnInit {
     this.pinCode = Number(con.pin);
     this.schemeName = sub.schemeValue;
     if (!this.validate()) {
-      console.log(this.aadharNumber);
       this.fill();
       this.add();
     }
@@ -136,23 +134,22 @@ export class ApplySchemeComponent implements OnInit {
 
   //TODO: Validate
    validate():boolean {
-    if(this.aadharNumber===null)
+    if(this.aadharNumber===null||this.aadharNumber==undefined)
     {
-      console.log("AADHAR");
       alert("Enter valid Adhar")
       return true
     }
-    if(this.communityCategory===null)
+    if(this.communityCategory===null||this.communityCategory==undefined)
     {
       alert("Enter valid Community Category")
       return true;
     }
-    if(this.fatherName===null)
+    if(this.fatherName===null||this.fatherName===undefined)
     {
       alert("Enter valid Name")
       return true;
     }
-    if(this.motherName===null)
+    if(this.motherName===null||this.motherName===undefined)
     {
       alert("Enter valid Name")
       return true;
@@ -162,47 +159,47 @@ export class ApplySchemeComponent implements OnInit {
       alert("Enter valid income")
       return true;
     }
-    if(this.presentYear===0||this.presentYear===NaN)
+    if(this.presentYear===0||this.presentYear===undefined)
     {
       alert("Enter valid year")
       return true;
     }
-    if(this.prevPassingYear===0||this.prevPassingYear===NaN)
+    if(this.prevPassingYear===0||this.prevPassingYear===undefined)
     {
       alert("Enter valid previous class")
       return true;
     }
-    if(this.prevClassMarks===0||this.prevClassMarks===NaN)
+    if(this.prevClassMarks===0||this.prevClassMarks===undefined)
     {
       alert("Enter valid Percentage")
       return true;
     }
-    if(this.rollNo10===0||this.rollNo10===NaN)
+    if(this.rollNo10===0||this.rollNo10===undefined)
     {
       alert("Enter valid Rollno of 10th class")
       return true;
     }
-    if(this.rollNo12===0||this.rollNo12===NaN)
+    if(this.rollNo12===0||this.rollNo12===undefined)
     {
       alert("Enter valid Rollno of 12th class")
       return true;
     }
-    if(this.marks10===0||this.marks10===NaN)
+    if(this.marks10===0||this.marks10===undefined)
     {
       alert("Enter valid Percentage")
       return true;
     }
-    if(this.marks12===0||this.marks12===NaN)
+    if(this.marks12===0||this.marks12===undefined)
     {
       alert("Enter valid Percentage")
       return true;
     }
-    if(this.boardName10===null)
+    if(this.boardName10===null||this.boardName10===undefined)
     {
       alert("Enter valid BoardName")
       return true;
     }
-    if(this.boardName12===null)
+    if(this.boardName12===null||this.boardName12===undefined)
     {
       alert("Enter valid BoardName")
       return true;
@@ -242,37 +239,37 @@ export class ApplySchemeComponent implements OnInit {
     //   alert("Enter valid Percentage")
     //   return true;
     // }
-    if(this.parentsProfession===null)
+    if(this.parentsProfession===null||this.parentsProfession===undefined)
     {
       alert("Enter valid detail")
       return true;
     }
-    if(this.state===null)
+    if(this.state===null||this.state===undefined)
     {
       alert("Enter valid state")
       return true;
     }
-    if(this.district===null)
+    if(this.district===null||this.district===undefined)
     {
       alert("Enter valid district")
       return true;
     }
-    if(this.block===null)
+    if(this.block===null||this.block===undefined)
     {
       alert("Enter valid block")
       return true;
     }
-    if(this.houseNo===null)
+    if(this.houseNo===null||this.houseNo===undefined)
     {
       alert("Enter valid HouseNo")
       return true;
     }
-    if(this.streetNo===null)
+    if(this.streetNo===null||this.streetNo===undefined)
     {
       alert("Enter valid streetNo")
       return true;
     }
-    if(this.schemeName===null)
+    if(this.schemeName===null||this.schemeName===undefined)
     {
       alert("Enter valid schemeNo")
       return true;
