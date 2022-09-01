@@ -1,9 +1,11 @@
 <div class="center card" style="
 background-color: rgb(102, 7, 150);" *ngIf="name==='/'">
-  <h2>
+  <h2 style="
+   color: #FFF;">
     NATIONAL SCHOLARSHIP PORTAL
   </h2>
-  <h3>
+  <h3 style="
+  color: #FFF;">
     Government of India
   </h3>
 </div>
@@ -13,5 +15,6 @@ background-color: rgb(102, 7, 150);" *ngIf="name==='/'">
 <app-body *ngIf="isOk('/')&& isRoleOk('NONE')"></app-body>
 <app-studenthome *ngIf="isOk('/')&& isRoleOk('STUDENT')"></app-studenthome>
 <app-institute-home *ngIf="isOk('/')&& isRoleOk('INSTITUTE')"></app-institute-home>
+<app-scholarship-approval *ngIf="isOk('/')&& isRoleOk('NODAL')"></app-scholarship-approval>
 
 <!-- <app-institutionregistration></app-institutionregistration> -->

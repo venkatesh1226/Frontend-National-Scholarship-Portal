@@ -39,6 +39,6 @@ export class InstitutionloginComponent implements OnInit {
   }
   validate() { }
   navigate() {
-    
+    this.route.navigate(["../"])
   }
 }

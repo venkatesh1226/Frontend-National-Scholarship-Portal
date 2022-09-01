@@ -1,0 +1,17 @@
+<ul>
+    <div *ngFor="let item of scholarships; let i = index" class="card">
+        <h3>
+            Scheme Applied {{item.schemeName}}
+        </h3>
+        <h4>
+            Institution Status <strong>{{item.scholarshipStatus.approvedByInstitute}}</strong>
+        </h4>
+        <h4>
+            Nodal Officer Status <strong>{{item.scholarshipStatus.approvedByNodal}}</strong>
+        </h4>
+        <h4>
+            Ministry Status <strong>{{item.scholarshipStatus.approvedByMinistry}}</strong>
+        </h4>
+        <!-- <pre> {{i+1}} {{convertToShortString(item)}}</pre> -->
+    </div>
+</ul>

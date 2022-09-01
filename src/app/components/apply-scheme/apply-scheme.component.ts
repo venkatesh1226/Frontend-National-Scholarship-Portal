@@ -18,8 +18,9 @@ import { TwelDetComponent } from '../twel-det/twel-det.component';
 import { FeeDetails } from 'src/app/Models/Scholarship/FeeDetails';
 import { ContactDetails } from 'src/app/Models/Scholarship/ContactDetails';
 import { Router } from '@angular/router';
-import { ScholarshipAddService } from 'src/app/services/AddScholarshipService/scholarship-add.service';
+import { ScholarshipAddService } from 'src/app/services/AddScholarshipService/addScholarshipService.service';
 import { MinLengthValidator, Validators } from '@angular/forms';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-apply-scheme',
@@ -82,7 +83,7 @@ export class ApplySchemeComponent implements OnInit {
   approvedByMinistry: string = "Not Received";
 
 
-  constructor(private serve:ScholarshipAddService,private route:Router) { }
+  constructor(private serve:ScholarshipAddService,private route:Router,private parent:AppComponent) { }
 
   ngOnInit(): void {
   }
@@ -368,7 +369,8 @@ export class ApplySchemeComponent implements OnInit {
   }
 
   getStudent(): number{//update after login
-    return 27;
+    var id = this.parent.user.getStudent().id;
+    return id == undefined ? 27 : id;
   }
 
 }

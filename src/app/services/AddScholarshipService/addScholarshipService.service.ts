@@ -14,4 +14,9 @@ export class ScholarshipAddService {
   addScholarship(s:Scholarship):Observable<Scholarship>{ 
     return this.myhttp.post<Scholarship>(this.restURL + "/apply", s);
   }
+
+  getCurrentStudentsScholarship(id:number):Observable<Scholarship[]> {
+    return this.myhttp.get<Scholarship[]>(this.restURL + "/scholarships/"+id);
+
+  }
 }

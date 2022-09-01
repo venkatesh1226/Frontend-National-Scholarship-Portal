@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AppComponent } from 'src/app/app.component';
 import { StudentloginService } from '../services/studentlogin.service';
 
@@ -10,7 +11,7 @@ import { StudentloginService } from '../services/studentlogin.service';
 export class NavbarComponent implements OnInit {
 
   
-  constructor(public  parent: AppComponent,private serve:StudentloginService) { }
+  constructor(public  parent: AppComponent,private serve:StudentloginService,private route:Router) { }
 
   ngOnInit(): void {
   }
@@ -24,8 +25,12 @@ export class NavbarComponent implements OnInit {
         'role':'NONE'
         
       });
-      
+      this.navigate();
       }, error=>("Try Again"));
+  }
+
+  navigate() { 
+    this.route.navigate(["../"])
   }
 
 }

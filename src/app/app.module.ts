@@ -42,6 +42,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 import { InstitutionregistrationComponent } from './components/institutionregistration/institutionregistration.component';
 import { StudenthomeComponent } from './components/studenthome/studenthome.component';
+import { StudentAppliedComponent } from './components/student-applied/student-applied.component';
 
 
 
@@ -70,7 +71,8 @@ import { StudenthomeComponent } from './components/studenthome/studenthome.compo
     SubDetComponent,
     HomeComponent,
     InstitutionregistrationComponent,
-    StudenthomeComponent
+    StudenthomeComponent,
+    StudentAppliedComponent
   ],
   imports: [
     BrowserModule,
