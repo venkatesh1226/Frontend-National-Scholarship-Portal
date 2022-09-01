@@ -15,6 +15,7 @@ export class StudentAppliedComponent implements OnInit {
 
   ngOnInit(): void {
     var id = this.parent.user.getStudent().id;
+    console.log("****"+id)
     this.serve.getCurrentStudentsScholarship(id == undefined ? 27 : id).
       subscribe((items: Scholarship[]) => {
         console.log(items);
@@ -28,8 +29,8 @@ export class StudentAppliedComponent implements OnInit {
 
   convertToShortString(s:Scholarship):string { 
     return s.schemeName + "\nInstitute Status " + s.scholarshipStatus.approvedByInstitute +
-      "\nNodal Officer status" + s.scholarshipStatus.approvedByNodal +
-      "\nMinistry Status"+ s.scholarshipStatus.approvedByMinistry;
+      "\nNodal Officer status " + s.scholarshipStatus.approvedByNodal +
+      "\nMinistry Status "+ s.scholarshipStatus.approvedByMinistry;
   }
 
 }

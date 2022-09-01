@@ -10,7 +10,11 @@ export class ScholarshipApprovalService {
   private URL="http://localhost:8008"
 
   scholarships: Scholarship[] = []
-  constructor(private http:HttpClient) { }
+  
+  constructor(private http: HttpClient) {
+    
+   }
+   
 
   getScholarships(): Observable<Scholarship[]> { 
     
@@ -32,10 +36,12 @@ export class ScholarshipApprovalService {
     }
     else
       roleNum = 1;
-    
-    this.http.put<Scholarship[]>(this.URL + "/scholarships/status/" + s.id + "/"+roleNum, 
+    console.log(this.URL + "/scholarships/status/" + s.id + "/" + roleNum);
+    this.http.put<Scholarship>(this.URL + "/scholarships/status/" + s.id + "/"+roleNum, 
       s.scholarshipStatus.approvedByNodal
-    )
+    ).subscribe((data: Scholarship) => { 
+      console.log(data);
+    })
     console.log("************");
     console.log(s.id);
     return this.getScholarships();

@@ -26,8 +26,10 @@ export class ScholarshipApprovalComponent implements OnInit {
   //TODO ACCORDING TO LOGGED IN USER APPROVE RELEVANT FIELD
   
   approve(item: Scholarship) {
-    //BY DEFAULT ADDED NODAL OFFICER APPROVAL 
+    //BY DEFAULT ADDED NODAL OFFICER APPROVAL
     //BUT AFTER REST API CREATION CODE NEED TO BE CHANGED.
+    //deleting so that list refreshes
+    delete this.scholarships[0];
     item.scholarshipStatus.approvedByNodal = "Accepted by " + this.role.toLowerCase() + " Officer";
     this.service.editApproval(item,this.role).subscribe((items: Scholarship[]) => (this.scholarships = items));
    }

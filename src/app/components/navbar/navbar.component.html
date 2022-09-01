@@ -1,14 +1,17 @@
 <ul>
-    <li><a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a></li>
-    <li><a routerLink="/about-us" routerLinkActive="active" ariaCurrentWhenActive="page">ABOUT US</a></li>
-    <li><a routerLink="/contact-us" routerLinkActive="active" ariaCurrentWhenActive="page">Contact US</a></li>
-    <li *ngIf="parent.isRoleOk('NONE')"><a routerLink="/student-register" routerLinkActive="active"
-            ariaCurrentWhenActive="page">Student Registeration</a></li>
-    <li *ngIf="parent.isRoleOk('NONE')"><a routerLink="institute-register" routerLinkActive="active"
-            ariaCurrentWhenActive="page">Institution Register</a></li>
-    <li *ngIf="parent.isRoleOk('NONE')"><a routerLink="/nodalofficerlogin" routerLinkActive="active"
-            ariaCurrentWhenActive="page">Nodal Officer Login</a></li>
-    <li *ngIf="parent.isRoleOk('NONE')"><a routerLink="/institutionlogin" routerLinkActive="active"
-            ariaCurrentWhenActive="page">Institution Login</a> </li>
-    <li *ngIf="!parent.isRoleOk('NONE')"><a (click)="logout()">Logout</a> </li>
+        <li><a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a></li>
+        <li><a routerLink="/about-us" routerLinkActive="active" ariaCurrentWhenActive="page">ABOUT US</a></li>
+        <li><a routerLink="/contact-us" routerLinkActive="active" ariaCurrentWhenActive="page">Contact US</a></li>
+        <li *ngIf="parent.isRoleOk('NONE')"><a routerLink="/student-register" routerLinkActive="active"
+                        ariaCurrentWhenActive="page">Student Registeration</a></li>
+        <li *ngIf="parent.isRoleOk('NONE')"><a routerLink="institute-register" routerLinkActive="active"
+                        ariaCurrentWhenActive="page">Institution Register</a></li>
+        <li *ngIf="parent.isRoleOk('NONE')"><a routerLink="/nodalofficerlogin" routerLinkActive="active"
+                        ariaCurrentWhenActive="page">Nodal Officer Login</a></li>
+        <li *ngIf="parent.isRoleOk('NONE')"><a routerLink="/institutionlogin" routerLinkActive="active"
+                        ariaCurrentWhenActive="page">Institution Login</a> </li>
+
+        <li *ngIf="parent.isRoleOk('STUDENT')"><a routerLink="../applyscheme" routerLinkActive="active"
+                        ariaCurrentWhenActive="page">Apply Scholarship</a> </li>
+        <li *ngIf="!parent.isRoleOk('NONE')"><a (click)="logout()">Logout</a> </li>
 </ul>

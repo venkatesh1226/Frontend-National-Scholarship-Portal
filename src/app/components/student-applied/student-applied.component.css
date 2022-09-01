@@ -1,0 +1,11 @@
+ul{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+div{
+    width: auto;
+    display: block;
+    margin: 3%;
+    padding: 10px;
+}

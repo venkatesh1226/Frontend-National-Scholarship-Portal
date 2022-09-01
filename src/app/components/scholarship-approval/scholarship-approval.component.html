@@ -7,10 +7,10 @@
     </style>
 </div>
 <ul>
-    <li *ngFor="let item of scholarships; let i = index" class="card">
+    <li *ngFor="let item of scholarships; let i = index" class="noncolor-card">
         <pre> {{i+1}} {{convertToShortString(item)}}</pre>
-        <button class="approve card" (click)="approve(item)">Approve</button>
-        <button class="reject card" (click)="reject(item)">Reject</button>
-        <button class="more card" (click)="more(item)">View More Details>></button>
+        <button class="approve noncolor-card" (click)="approve(item)">Approve</button>
+        <button class="reject noncolor-card" (click)="reject(item)">Reject</button>
+        <button class="more noncolor-card" (click)="more(item)">View More Details>></button>
     </li>
 </ul>
