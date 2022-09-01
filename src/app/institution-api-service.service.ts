@@ -13,6 +13,7 @@ export class InstitutionApiServiceService {
 
   register(instData: any)
   {
+    console.log(instData);
     return this._http.post<any>(this._url, instData);
   }
 }
