@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ScholarshipAddService } from './scholarship-add.service';
+import { ScholarshipAddService } from './addScholarshipService.service';
 
 describe('ScholarshipAddService', () => {
   let service: ScholarshipAddService;

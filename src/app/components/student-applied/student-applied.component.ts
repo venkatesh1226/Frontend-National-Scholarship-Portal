@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
 import { Scholarship } from 'src/app/Models/Scholarship/Scholarship';
-import { ScholarshipAddService } from 'src/app/services/addScholarshipService/scholarship-add.service';
+import { ScholarshipAddService } from 'src/app/services/AddScholarshipService/addScholarshipService.service';
 
 @Component({
   selector: 'app-student-applied',
