@@ -32,10 +32,10 @@ export class AppComponent {
 
     if (role === 'NONE') {
       console.log(this.user.getLogin());
-      return this.user.getLogin() === undefined;
+      return this.user.getLogin() === undefined||this.user.getLogin().role==='NONE';
     
     }
-    if (this.user.getLogin() === undefined)
+    if (this.user.getLogin() === undefined ||this.user.getLogin().role==='NONE')
       return false;
     return this.user.getLogin().role === role.trim();
   }

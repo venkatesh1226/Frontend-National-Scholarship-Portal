@@ -36,7 +36,8 @@ export class CurrentUser {
     getLogin() { 
         return this.login;
     }
-    setLogin(l:login) { 
+    setLogin(l: login) { 
+                 
         this.login = l;
     }
 

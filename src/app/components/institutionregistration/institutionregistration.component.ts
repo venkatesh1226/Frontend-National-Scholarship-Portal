@@ -153,7 +153,10 @@ allInstType: string [] = [
     }
   }
 
-  validate(){}
+  validate() {
+    if (this.confirmPassword !== this.setPassword)
+      alert("PASSWORD NOT MATCH");
+  }
   navigate() {
     this.route.navigate(["../institutionlogin"]);
 }
