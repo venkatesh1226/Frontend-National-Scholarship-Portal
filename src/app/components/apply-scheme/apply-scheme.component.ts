@@ -17,8 +17,9 @@ import { TenDetComponent } from '../ten-det/ten-det.component';
 import { TwelDetComponent } from '../twel-det/twel-det.component';
 import { FeeDetails } from 'src/app/Models/Scholarship/FeeDetails';
 import { ContactDetails } from 'src/app/Models/Scholarship/ContactDetails';
-import { ScholarshipAddService } from 'src/app/services/addScholarshipService/scholarship-add.service';
 import { Router } from '@angular/router';
+import { ScholarshipAddService } from 'src/app/services/AddScholarshipService/scholarship-add.service';
+import { MinLengthValidator, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-apply-scheme',
@@ -88,7 +89,7 @@ export class ApplySchemeComponent implements OnInit {
 
   submit(basic: BasicDetComponent, acad: AcadDetComponent, ten: TenDetComponent,
     twel: TwelDetComponent, fee: FeeDetComponent, oth: OthDetComponent, con: ConDetComponent,
-    sub: SubDetComponent) { 
+    sub: SubDetComponent) {
     this.aadharNumber = basic.adhar;
     this.religion = basic.relig;
     this.communityCategory = basic.commu;
@@ -126,13 +127,129 @@ export class ApplySchemeComponent implements OnInit {
     this.pinCode = parseInt(con.pin);
     this.schemeName = sub.schemeValue;
     this.validate();
+    console.log(this.aadharNumber);
     this.fill();
     this.add();
   }
 
   //TODO: Validate
-  validate() { 
-
+  validate() {
+    if(this.aadharNumber==="")
+    {
+      alert("Enter valid Adhar")
+    }
+    if(this.communityCategory==="")
+    {
+      alert("Enter valid Community Category")
+    }
+    if(this.fatherName==="")
+    {
+      alert("Enter valid Name")
+    }
+    if(this.motherName==="")
+    {
+      alert("Enter valid Name")
+    }
+    if(this.income===parseInt(""))
+    {
+      alert("Enter valid income")
+    }
+    if(this.presentYear===parseInt(""))
+    {
+      alert("Enter valid year")
+    }
+    if(this.prevPassingYear===parseInt(""))
+    {
+      alert("Enter valid previous class")
+    }
+    if(this.prevClassMarks===parseInt(""))
+    {
+      alert("Enter valid Percentage")
+    }
+    if(this.rollNo10===parseInt(""))
+    {
+      alert("Enter valid Rollno")
+    }
+    if(this.rollNo12===parseInt(""))
+    {
+      alert("Enter valid Rollno")
+    }
+    if(this.marks10===parseInt(""))
+    {
+      alert("Enter valid Percentage")
+    }
+    if(this.marks12===parseInt(""))
+    {
+      alert("Enter valid Percentage")
+    }
+    if(this.boardName10==="")
+    {
+      alert("Enter valid BoardName")
+    }
+    if(this.boardName12==="")
+    {
+      alert("Enter valid BoardName")
+    }
+    if(this.passingYear10===parseInt(""))
+    {
+      alert("Enter valid Passing year")
+    }
+    if(this.passingYear12===parseInt(""))
+    {
+      alert("Enter valid Passing year")
+    }
+    if(this.admissionFee===parseInt(""))
+    {
+      alert("Enter valid amount")
+    }
+    if(this.tuitionFee===parseInt(""))
+    {
+      alert("Enter valid amount")
+    }
+    if(this.otherFee===parseInt(""))
+    {
+      alert("Enter valid amount")
+    }
+    if(this.disabilityName==="")
+    {
+      alert("Enter valid type")
+    }
+    if(this.disabilityPercentage===parseInt(""))
+    {
+      alert("Enter valid Percentage")
+    }
+    if(this.parentsProfession==="")
+    {
+      alert("Enter valid detail")
+    }
+    if(this.state==="")
+    {
+      alert("Enter valid state")
+    }
+    if(this.district==="")
+    {
+      alert("Enter valid district")
+    }
+    if(this.block==="")
+    {
+      alert("Enter valid block")
+    }
+    if(this.houseNo==="")
+    {
+      alert("Enter valid HouseNo")
+    }
+    if(this.streetNo==="")
+    {
+      alert("Enter valid streetNo")
+    }
+    if(this.schemeName==="")
+    {
+      alert("Enter valid schemeNo")
+    }
+    if(this.pinCode===parseInt(""))
+    {
+      alert("Enter valid pincode")
+    }
   }
 
   fill() { 
