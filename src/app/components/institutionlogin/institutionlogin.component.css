@@ -13,3 +13,11 @@ padding: 20px;
 {
     background-color: rgb(170, 170, 246);
 }
+
+.alert-danger{
+    background-color: rgb(252, 76, 76);
+
+}
+.alert{
+    color: black;
+}

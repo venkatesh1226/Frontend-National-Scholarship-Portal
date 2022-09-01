@@ -1,15 +1,22 @@
-<div fxFlexAlign="center" fxFlexFill class="main-div">
-    <mat-card fxFlex="75">
+<div fxFlexAlign="center" fxFlexFill class="main-div" fxLayout="column">
+    <mat-card fxFlex="200">
         <mat-toolbar class="btn">Student Login</mat-toolbar>
         <form fxLayoutAlign="stretch" fxLayout="column" class="login-form" (ngSubmit)="userLogin()">
             <mat-form-field>
                 <mat-label>Username</mat-label>
-                <input matInput type="text" [(ngModel)]="id" placeholder="Username" id="userID" name="userID">
+                <input matInput #name="ngModel" type="text" [(ngModel)]="id" placeholder="Username" id="userID" name="userID" ngModel required>
+                <div *ngIf="name.touched && name.invalid" class="alert alert-danger">
+                 *Username is required
+                </div>
+                    
             </mat-form-field>
 
             <mat-form-field>
                 <mat-label>Password</mat-label>
-                <input matInput type="password" [(ngModel)]="pass" placeholder="Password" id="password" name="password">
+                <input matInput #password="ngModel" type="password" required [(ngModel)]="pass" placeholder="Password" id="password" name="password" ngModel>
+                <div *ngIf="password.touched && password.invalid" class="alert alert-danger">
+                    *Password is required
+                   </div>
             </mat-form-field>
             <button mat-raised-button type="submit" class="btn"> Login </button>
         </form>

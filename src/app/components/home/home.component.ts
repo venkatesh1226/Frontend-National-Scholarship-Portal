@@ -30,29 +30,39 @@ export class HomeComponent implements OnInit {
   success: boolean=false;
   constructor(private serve:StudentregistrationService,private router:Router) { }
 
-
+  submitted = false;
+  form! : FormGroup;
   ngOnInit(): void {
+    this.form=new FormGroup({
+      'stateofDomicile':new FormControl('',Validators.required),
+      'dist':new FormControl('',Validators.required),
+      'name':new FormControl('',Validators.required),
+      'dob':new FormControl('',Validators.required),
+      'gender':new FormControl('',Validators.required),
+      'mobileNumber':new FormControl('',Validators.required),
+      'email':new FormControl('',Validators.required),
+      'institutionCode':new FormControl('',Validators.required),
+      'aadharNumber':new FormControl('',Validators.required),
+      'ifsc':new FormControl('',Validators.required),
+      'accountno':new FormControl('',Validators.required),
+      'bankname':new FormControl('',Validators.required),
+      'setPassword':new FormControl('',Validators.required),
+      'confirmPassword':new FormControl('',Validators.required)
+    });
   }
-  form=new FormGroup({
-    'stateofDomicile':new FormControl('',Validators.required),
-    'dist':new FormControl('',Validators.required),
-    'name':new FormControl('',Validators.required),
-    'dob':new FormControl('',Validators.required),
-    'gender':new FormControl('',Validators.required),
-    'mobileNumber':new FormControl('',Validators.required),
-    'email':new FormControl('',Validators.required),
-    'institutionCode':new FormControl('',Validators.required),
-    'aadharNumber':new FormControl('',Validators.required),
-    'ifsc':new FormControl('',Validators.required),
-    'accountno':new FormControl('',Validators.required),
-    'bankname':new FormControl('',Validators.required),
-    'setPassword':new FormControl('',Validators.required),
-    'confirmPassword':new FormControl('',Validators.required)
-  });
+ 
+  
 
   student:Studentregis=new Studentregis();
   saveStudent()
   {
+    this.submitted = true;
+    
+    if(this.form.invalid)
+    {
+      alert("Please enter valid details!");
+      return;
+    }
     this.fill();
     this.validate();
     console.log(this.stdReg.state)

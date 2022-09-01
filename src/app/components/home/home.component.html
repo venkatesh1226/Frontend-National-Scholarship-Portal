@@ -4,22 +4,29 @@
     <h1>STUDENT REGISTRATION</h1>
     <hr>
     <div class="container">
-        <form class="row" [formGroup]="form" (ngSubmit)="saveStudent()" fxFlexAlign="center center">
+        <form class="row"  [formGroup]="form" (ngSubmit)="saveStudent()" fxFlexAlign="center center">
 
             <div class="col-md-10">
                 <div class="col-md-4">
                     <label for="inputState" class="form-label">STATE OF DOMICILE</label>
-                    <select [(ngModel)]="state" formControlName="stateofDomicile" class="form-select" id="state">
+                    <select required   [(ngModel)]="state" formControlName="stateofDomicile"  class="form-select" id="state" 
+                    [ngClass]="{'is-invalid' : submitted && form.controls['stateofDomicile'].errors}"
+                    formControlName="stateofDomicile">
+                    
                         <option selected>Select state</option>
                         <option>Andra Pradesh </option>
                         <option>Kerala </option>
                         <option>Maharashtra</option>
                         <option>West Bengal</option>
                     </select>
+                    
+              
                 </div>
                 <label for="inputDistrict" class="form-label">DISTRICT</label>
                 <select [(ngModel)]="district" formControlName="dist" id="inputDistrict" class="form-select"
-                    id="district">
+                    id="district"
+                    [ngClass]="{'is-invalid' : submitted && form.controls['dist'].errors}"
+                    formControlName="dist">
                     <option selected>Select district </option>
                     <option>Akola </option>
                     <option>Amravati</option>
@@ -30,19 +37,26 @@
                 <div class="col-md-4">
                     <label for="inputName" class="form-label">Name (AS IN MARKS SHEETS) :</label>
                     <input [(ngModel)]="name" formControlName="name" type="text" class="form-control" id="Name"
-                        placeholder="">
+                        placeholder=""
+                        [ngClass]="{'is-invalid' : submitted && form.controls['name'].errors}"
+                    formControlName="name">
+                        
                 </div><br>
 
             </div>
             <br>
             <div class="col-md-4">
                 <label for="inputDOB" class="form-label"> DOB :</label>
-                <input [(ngModel)]="dob" formControlName="dob" type="date" class="form-control" id="dob" placeholder="">
+                <input [(ngModel)]="dob" formControlName="dob" type="date" class="form-control" id="dob" placeholder=""
+                [ngClass]="{'is-invalid' : submitted && form.controls['dob'].errors}"
+                    formControlName="dob">
             </div>
             <div class="col-md-4">
                 <label for="inputGender" class="form-label">GENDER :</label>
                 <select [(ngModel)]="gender" formControlName="gender" type="inoutGender" class="form-select"
-                    id="institutecode" placeholder="">
+                    id="institutecode" placeholder=""
+                    [ngClass]="{'is-invalid' : submitted && form.controls['gender'].errors}"
+                    formControlName="gender">
                     <option selected>Select Gender</option>
                     <option>MALE</option>
                     <option>FEMALE</option>
@@ -52,57 +66,76 @@
             <div class="col-md-4">
                 <label for="inputMobileNumber" class="form-label">MOBILE NUMBER:</label>
                 <input [(ngModel)]="mobile" formControlName="mobileNumber" type="number" class="form-control"
-                    id="mobilenumber" placeholder="">
+                    id="mobilenumber" placeholder=""
+                    [ngClass]="{'is-invalid' : submitted && form.controls['mobleNumber'].errors}"
+                    formControlName="mobileNumber">
             </div>
             <div class="row">
                 <div class="col-md-4">
                     <label for="inputEmail" class="form-label">EMAIL :</label>
                     <input [(ngModel)]="email" formControlName="email" type="email" class="form-control" id="email"
-                        placeholder="">
+                        placeholder=""
+                        [ngClass]="{'is-invalid' : submitted && form.controls['email'].errors}"
+                    formControlName="email">
                 </div>
                 <div class="col-md-6">
                     <label for="inputInstituteCode" class="form-label">INSTITUTE CODE :</label>
                     <input [(ngModel)]="instCode" formControlName="institutionCode" type="text" class="form-control"
-                        id="institutecode" placeholder="">
+                        id="institutecode" placeholder=""
+                        [ngClass]="{'is-invalid' : submitted && form.controls['institutionCode'].errors}"
+                    formControlName="institutionCode">
                 </div>
                 <div class="col-md-12">
                     <label for="inputAdharNumber" class="form-label">ADHAR NUMBER :</label>
                     <input [(ngModel)]="adhar" formControlName="aadharNumber" type="number" class="form-control"
-                        id="adharnumber" placeholder="">
+                        id="adharnumber" placeholder=""
+                        [ngClass]="{'is-invalid' : submitted && form.controls['aadharNumber'].errors}"
+                    formControlName="aadharNumber">
                 </div>
 
                 <div class="col-md-8">
                     <label for="inputBankIFSCCode" class="form-label">BANK IFSC CODE :</label>
                     <input [(ngModel)]="ifsc" formControlName="ifsc" type="text" class="form-control" id="bankifsccode"
-                        placeholder="">
+                        placeholder=""
+                        [ngClass]="{'is-invalid' : submitted && form.controls['ifsc'].errors}"
+                        formControlName="ifsc">
                 </div>
                 <div class="col-md-8">
                     <label for="inputBankAccountNumber" class="form-label">BANK ACCOUNT NUMBER :</label>
                     <input [(ngModel)]="bankAcc" formControlName="accountno" type="number" id="bankaccountnumber"
-                        class="form-control" placeholder="">
+                        class="form-control" placeholder=""
+                        [ngClass]="{'is-invalid' : submitted && form.controls['accountno'].errors}"
+                        formControlName="accountno">
                 </div>
                 <div class="col-md-8">
                     <label for="inputBankName" class="form-label">BANK NAME :</label>
                     <input [(ngModel)]="bankName" formControlName="bankname" type="text" class="form-control"
-                        id="bankname" placeholder="">
+                        id="bankname" placeholder=""
+                        [ngClass]="{'is-invalid' : submitted && form.controls['bankname'].errors}"
+                        formControlName="bankname">
                 </div>
                 <div class="col-md-8">
                     <label for="inputSetPassword" class="form-label">SET PASSWORD</label>
                     <input [(ngModel)]="password" formControlName="setPassword" type="password" class="form-control"
-                        id="setpassword" placeholder="">
+                        id="setpassword" placeholder=""
+                        [ngClass]="{'is-invalid' : submitted && form.controls['setPassword'].errors}"
+                        formControlName="setPassword">
                 </div>
                 <div class="col-md-8">
                     <label for="inputConfirmPassword" class="form-label">CONFIRM PASSWORD</label>
                     <input [(ngModel)]="cPassword" formControlName="confirmPassword" type="password"
-                        id="confirmpassword" class="form-control" placeholder="">
+                        id="confirmpassword" class="form-control" placeholder=""
+                        [ngClass]="{'is-invalid' : submitted && form.controls['confirmPassword'].errors}"
+                        formControlName="confirmPassword">
                 </div>
                 <div class="form-check" class="col-md-10">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked
+                    >
                     <label class="form-check-label" for="flexCheckChecked">
                         ALL THE ABOVE INFORMATION FURNISHED BY ME IS TRUE TO THE BEST OF MY KNOWLEDGE.
                     </label>
                 </div>
-                <div> <button class="btn btn-primary" type="register" (click)="saveStudent()">
+                <div> <button [disabled]="!form.valid" class="btn btn-primary" type="register" (click)="saveStudent()">
                         Register
                     </button>
                     <button class="btn btn-primary" type="reset" value="Reset">RESET</button>
