@@ -90,33 +90,34 @@ export class ApplySchemeComponent implements OnInit {
   submit(basic: BasicDetComponent, acad: AcadDetComponent, ten: TenDetComponent,
     twel: TwelDetComponent, fee: FeeDetComponent, oth: OthDetComponent, con: ConDetComponent,
     sub: SubDetComponent) {
+    console.log(basic.adhar);
     this.aadharNumber = basic.adhar;
     this.religion = basic.relig;
     this.communityCategory = basic.commu;
     this.fatherName = basic.fName;
     this.motherName = basic.mName;
-    this.income = parseInt(basic.income);
+    this.income = Number(basic.income);
     this.instituteName = acad.insName;
     this.currentCourse = acad.preClass;
     this.modeOfStudy = acad.mode;
     this.startData = new Date(acad.classStart);
     this.boardName = acad.university;
     this.prevCourse = acad.prevClass;
-    this.prevClassMarks = parseInt(acad.prevClassPer);
-    this.rollNo10 = parseInt(ten.rollno);
+    this.prevClassMarks = Number(acad.prevClassPer);
+    this.rollNo10 = Number(ten.rollno);
     this.boardName10 = ten.board;
-    this.passingYear10 = parseInt(ten.passYear);
-    this.marks10 = parseInt(ten.perObtain);
-    this.rollNo12 = parseInt(twel.rollno);
+    this.passingYear10 = Number(ten.passYear);
+    this.marks10 = Number(ten.perObtain);
+    this.rollNo12 = Number(twel.rollno);
     this.boardName12 = twel.board;
-    this.passingYear12 = parseInt(twel.passYear);
-    this.marks12 = parseInt(twel.perObtain);
-    this.admissionFee = parseInt(fee.addFee);
-    this.tuitionFee = parseInt(fee.tuiFee);
-    this.otherFee = parseInt(fee.othFee);
+    this.passingYear12 = Number(twel.passYear);
+    this.marks12 = Number(twel.perObtain);
+    this.admissionFee = Number(fee.addFee);
+    this.tuitionFee = Number(fee.tuiFee);
+    this.otherFee = Number(fee.othFee);
     this.isDisabled = (oth.isDis === "Yes");
     this.disabilityName = oth.typeDis;
-    this.disabilityPercentage = parseInt(oth.percent);
+    this.disabilityPercentage = Number(oth.percent);
     this.maritalStatus = oth.mar;
     this.parentsProfession = oth.prof;
     this.state = con.state;
@@ -124,132 +125,164 @@ export class ApplySchemeComponent implements OnInit {
     this.block = con.taluka;
     this.houseNo = con.hNum;
     this.streetNo = con.sNum;
-    this.pinCode = parseInt(con.pin);
+    this.pinCode = Number(con.pin);
     this.schemeName = sub.schemeValue;
-    this.validate();
-    console.log(this.aadharNumber);
-    this.fill();
-    this.add();
+    if (!this.validate()) {
+      console.log(this.aadharNumber);
+      this.fill();
+      this.add();
+    }
   }
 
   //TODO: Validate
-  validate() {
-    if(this.aadharNumber==="")
+   validate():boolean {
+    if(this.aadharNumber===null)
     {
+      console.log("AADHAR");
       alert("Enter valid Adhar")
+      return true
     }
-    if(this.communityCategory==="")
+    if(this.communityCategory===null)
     {
       alert("Enter valid Community Category")
+      return true;
     }
-    if(this.fatherName==="")
+    if(this.fatherName===null)
     {
       alert("Enter valid Name")
+      return true;
     }
-    if(this.motherName==="")
+    if(this.motherName===null)
     {
       alert("Enter valid Name")
+      return true;
     }
-    if(this.income===parseInt(""))
+    if(this.income===0)
     {
       alert("Enter valid income")
+      return true;
     }
-    if(this.presentYear===parseInt(""))
+    if(this.presentYear===0||this.presentYear===NaN)
     {
       alert("Enter valid year")
+      return true;
     }
-    if(this.prevPassingYear===parseInt(""))
+    if(this.prevPassingYear===0||this.prevPassingYear===NaN)
     {
       alert("Enter valid previous class")
+      return true;
     }
-    if(this.prevClassMarks===parseInt(""))
+    if(this.prevClassMarks===0||this.prevClassMarks===NaN)
     {
       alert("Enter valid Percentage")
+      return true;
     }
-    if(this.rollNo10===parseInt(""))
+    if(this.rollNo10===0||this.rollNo10===NaN)
     {
-      alert("Enter valid Rollno")
+      alert("Enter valid Rollno of 10th class")
+      return true;
     }
-    if(this.rollNo12===parseInt(""))
+    if(this.rollNo12===0||this.rollNo12===NaN)
     {
-      alert("Enter valid Rollno")
+      alert("Enter valid Rollno of 12th class")
+      return true;
     }
-    if(this.marks10===parseInt(""))
+    if(this.marks10===0||this.marks10===NaN)
     {
       alert("Enter valid Percentage")
+      return true;
     }
-    if(this.marks12===parseInt(""))
+    if(this.marks12===0||this.marks12===NaN)
     {
       alert("Enter valid Percentage")
+      return true;
     }
-    if(this.boardName10==="")
+    if(this.boardName10===null)
     {
       alert("Enter valid BoardName")
+      return true;
     }
-    if(this.boardName12==="")
+    if(this.boardName12===null)
     {
       alert("Enter valid BoardName")
+      return true;
     }
-    if(this.passingYear10===parseInt(""))
+    if(this.passingYear10===0||this.passingYear10===NaN)
     {
       alert("Enter valid Passing year")
+      return true;
     }
-    if(this.passingYear12===parseInt(""))
+    if(this.passingYear12===0||this.passingYear12===NaN)
     {
       alert("Enter valid Passing year")
+      return true;
     }
-    if(this.admissionFee===parseInt(""))
+    if(this.admissionFee===0||this.admissionFee===NaN)
     {
       alert("Enter valid amount")
+      return true;
     }
-    if(this.tuitionFee===parseInt(""))
+    if(this.tuitionFee===0||this.tuitionFee===NaN)
     {
       alert("Enter valid amount")
+      return true;
     }
-    if(this.otherFee===parseInt(""))
+    if(this.otherFee===0||this.otherFee===NaN)
     {
       alert("Enter valid amount")
+      return true;
     }
-    if(this.disabilityName==="")
-    {
-      alert("Enter valid type")
-    }
-    if(this.disabilityPercentage===parseInt(""))
-    {
-      alert("Enter valid Percentage")
-    }
-    if(this.parentsProfession==="")
+    // if(this.disabilityName===null)
+    // {
+    //   alert("Enter valid type")
+    //   return true;
+    // }
+    // if(this.disabilityPercentage===0||this.disabilityPercentage===0)
+    // {
+    //   alert("Enter valid Percentage")
+    //   return true;
+    // }
+    if(this.parentsProfession===null)
     {
       alert("Enter valid detail")
+      return true;
     }
-    if(this.state==="")
+    if(this.state===null)
     {
       alert("Enter valid state")
+      return true;
     }
-    if(this.district==="")
+    if(this.district===null)
     {
       alert("Enter valid district")
+      return true;
     }
-    if(this.block==="")
+    if(this.block===null)
     {
       alert("Enter valid block")
+      return true;
     }
-    if(this.houseNo==="")
+    if(this.houseNo===null)
     {
       alert("Enter valid HouseNo")
+      return true;
     }
-    if(this.streetNo==="")
+    if(this.streetNo===null)
     {
       alert("Enter valid streetNo")
+      return true;
     }
-    if(this.schemeName==="")
+    if(this.schemeName===null)
     {
       alert("Enter valid schemeNo")
+      return true;
     }
-    if(this.pinCode===parseInt(""))
+    if(this.pinCode===0||this.pinCode===NaN)
     {
       alert("Enter valid pincode")
-    }
+      return true;
+     }
+     return false;
   }
 
   fill() { 
