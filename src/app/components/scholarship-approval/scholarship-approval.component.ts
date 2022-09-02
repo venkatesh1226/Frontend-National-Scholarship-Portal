@@ -20,7 +20,12 @@ export class ScholarshipApprovalComponent implements OnInit {
 
   ngOnInit(): void {
     this.role = this.parent.user.getLogin().role;
-    this.service.getScholarships(this.role).subscribe((items: Scholarship[]) => (this.scholarships = items));
+    if (this.role !== "INSTITUTE")
+      this.service.getScholarships(this.role).subscribe((items: Scholarship[]) => (this.scholarships = items));
+    else { 
+      var code: string = this.parent.user.getInstitute().institutionCode;
+      this.service.getInstituteScholarships(code)
+    }
  
   }
 

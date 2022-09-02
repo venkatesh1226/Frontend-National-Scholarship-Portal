@@ -13,7 +13,11 @@ export class ScholarshipApprovalService {
   
   constructor(private http: HttpClient) {
     
-   }
+  }
+  
+  getInstituteScholarships(code: string): Observable<Scholarship[]> { 
+    return this.http.get<Scholarship[]>(this.URL + "/inst-scholarships/" + code);
+  }
    
 
   getScholarships(role:string): Observable<Scholarship[]> { 
