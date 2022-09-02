@@ -16,17 +16,17 @@ export class ScholarshipApprovalService {
    }
    
 
-  getScholarships(): Observable<Scholarship[]> { 
+  getScholarships(role:string): Observable<Scholarship[]> { 
     
     //Example of calling rest api
     //return this.http.get<Scholarship[]>(URL)
 
 
-    return this.http.get<Scholarship[]>(this.URL+"/scholarships");
+    return this.http.get<Scholarship[]>(this.URL+"/scholarships/approval/"+role);
     
   }
 
-  editApproval(s: Scholarship,role:String): Observable<Scholarship[]> { 
+  editApproval(s: Scholarship,role:string): Observable<Scholarship[]> { 
     var roleNum: number;
     if (role === 'NODAL') {
       roleNum = 2;
@@ -44,7 +44,7 @@ export class ScholarshipApprovalService {
     })
     console.log("************");
     console.log(s.id);
-    return this.getScholarships();
+    return this.getScholarships(role);
   }
 
 }

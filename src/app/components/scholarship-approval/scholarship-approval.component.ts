@@ -19,8 +19,9 @@ export class ScholarshipApprovalComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.service.getScholarships().subscribe((items: Scholarship[]) => (this.scholarships = items));
     this.role = this.parent.user.getLogin().role;
+    this.service.getScholarships(this.role).subscribe((items: Scholarship[]) => (this.scholarships = items));
+ 
   }
 
   //TODO ACCORDING TO LOGGED IN USER APPROVE RELEVANT FIELD
@@ -30,12 +31,12 @@ export class ScholarshipApprovalComponent implements OnInit {
     //BUT AFTER REST API CREATION CODE NEED TO BE CHANGED.
     //deleting so that list refreshes
     delete this.scholarships[0];
-    item.scholarshipStatus.approvedByNodal = "Accepted by " + this.role.toLowerCase() + " Officer";
+    item.scholarshipStatus.approvedByNodal = "APPROVED";
     this.service.editApproval(item,this.role).subscribe((items: Scholarship[]) => (this.scholarships = items));
    }
 
   reject(item: Scholarship) {
-    item.scholarshipStatus.approvedByNodal = "Not Accepted By Nodal Officer";
+    item.scholarshipStatus.approvedByNodal = "Not APPROVED";
     this.service.editApproval(item,this.role).subscribe((items: Scholarship[]) => (this.scholarships = items));
    }
   
